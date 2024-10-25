@@ -1,0 +1,60 @@
+.about-footer {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #022c22;
+    padding: 20px;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-image: url('/images/topography.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .about-footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-footer-social-links {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .about-footer-social-icon {
+    font-size: 1.5rem;
+    transition: color 0.2s;
+    color: #bcf364;
+  }
+  
+  .about-footer-social-icon:hover {
+    color: #888; /* Change to any hover color you'd like */
+  }
+  
+  .about-footer-copyright {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .about-footer-link {
+    color: #bcf364;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .about-footer-link:hover {
+    color: white;
+  }
+  

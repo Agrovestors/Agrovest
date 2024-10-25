@@ -1,0 +1,29 @@
+/* mission.css */
+
+.mission-page {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .mission-content {
+    margin: 20px 0;
+  }
+  
+  .youtube-videos {
+    margin-top: 40px;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+  
