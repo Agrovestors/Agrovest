@@ -1,13 +1,14 @@
-"use client"; // Mark as a Client Component
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../images/AGROINVESTORLOGO.png"; // Adjust the path according to your folder structure
+import logo from "../images/AGROINVESTORLOGO.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navigation = [
     { title: "Home", href: "/" },
@@ -20,8 +21,24 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="w-full bg-[#022c22] h-20 shadow-md flex items-center justify-between px-4">
+    <div
+      className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-4 z-50 transition-all duration-300 ${isScrolled ? "bg-[#022c22aa] backdrop-blur-sm" : "bg-[#022c22] shadow-md"
+        }`}
+    >
       {/* Logo Section */}
       <Link href="/" className="flex items-center">
         <Image src={logo} alt="Agroinvestors Logo" width={50} height={50} />
@@ -52,7 +69,7 @@ const Navbar = () => {
               key={item.title}
               href={item.href}
               className="text-white py-2 hover:text-gray-300"
-              onClick={() => setIsOpen(false)} // Close the menu on link click
+              onClick={() => setIsOpen(false)}
             >
               {item.title}
             </Link>
