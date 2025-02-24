@@ -2,13 +2,12 @@
 import React from "react";
 import Navbar from "../src/components/Navbar"; // Ensure the path is correct
 import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
-import "../src/components/mission.css"; // Ensure this CSS file is correctly linked
-import "../src/app/style/about.css"; // Ensure this CSS file is correctly linked
+import "../src/app/style/mission.css"; // Ensure this CSS file is correctly linked
 import "../src/app/style/globals.css"; // Ensure this CSS file is correctly linked
 
 const Mission: React.FC = () => {
   return (
-    <div className="mission-page pt-20">
+    <div className="mission-page">
       {/* Render Navbar */}
       <Navbar />
 
@@ -55,7 +54,6 @@ const Mission: React.FC = () => {
         </div>
       </div>
       <Footer />
-
     </div>
   );
 };

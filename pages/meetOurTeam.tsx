@@ -30,6 +30,42 @@ const teamMembers = [
         imgSrc: "https://randomuser.me/api/portraits/women/4.jpg",
         link: "https://www.linkedin.com/in/sara-khan/",
     },
+    {
+        name: "Tom Hanks",
+        role: "Designer",
+        imgSrc: "https://randomuser.me/api/portraits/men/5.jpg",
+        link: "https://www.linkedin.com/in/tom-hanks/",
+    },
+    {
+        name: "Emily Stone",
+        role: "Marketing Lead",
+        imgSrc: "https://randomuser.me/api/portraits/women/6.jpg",
+        link: "https://www.linkedin.com/in/emily-stone/",
+    },
+    {
+        name: "Ryan Howard",
+        role: "Sales Director",
+        imgSrc: "https://randomuser.me/api/portraits/men/7.jpg",
+        link: "https://www.linkedin.com/in/ryan-howard/",
+    },
+    {
+        name: "Mia Wong",
+        role: "Customer Success",
+        imgSrc: "https://randomuser.me/api/portraits/women/8.jpg",
+        link: "https://www.linkedin.com/in/mia-wong/",
+    },
+    {
+        name: "James Bond",
+        role: "Operations",
+        imgSrc: "https://randomuser.me/api/portraits/men/9.jpg",
+        link: "https://www.linkedin.com/in/james-bond/",
+    },
+    {
+        name: "Ana Rosa",
+        role: "HR Manager",
+        imgSrc: "https://randomuser.me/api/portraits/women/10.jpg",
+        link: "https://www.linkedin.com/in/ana-rosa/",
+    },
 ];
 
 const MeetOurTeam = () => {
@@ -42,8 +78,7 @@ const MeetOurTeam = () => {
                 <div className="w-full lg:max-w-[465px] text-center lg:text-left">
                     <h1 className="text-4xl font-bold mb-4">Meet Our Senior Team</h1>
                     <p className="text-lg lg:pr-16">
-                        Our senior management team, including the directors based in various
-                        locations, handle the day-to-day operations of our organization.
+                        Our senior management team, including the directors based in various locations, handle the day-to-day operations of our organization.
                     </p>
                 </div>
             </div>
@@ -54,17 +89,19 @@ const MeetOurTeam = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="bg-white p-6 shadow-lg rounded-lg text-center">
-                            <a href={member.link} target="_blank" rel="noopener noreferrer">
-                                <img
-                                    src={member.imgSrc}
-                                    alt={member.name}
-                                    className="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-green-500"
-                                />
+                            <a href={member.link} target="_blank" rel="noopener noreferrer" className="group">
+                                <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-green-500">
+                                    <img
+                                        src={member.imgSrc}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110 group-hover:brightness-75"
+                                    />
+                                </div>
                             </a>
-                            <h3 className="text-xl font-bold">{member.name}</h3>
+                            <h3 className="text-xl font-bold mt-4">{member.name}</h3>
                             <p className="text-gray-600">{member.role}</p>
                             <a href={member.link} target="_blank" rel="noopener noreferrer">
-                                <BsLinkedin className="text-blue-600 mx-auto mt-3" size={24} />
+                                <BsLinkedin className="text-blue-600 mx-auto mt-3 transition-transform duration-300 hover:scale-110" size={24} />
                             </a>
                         </div>
                     ))}

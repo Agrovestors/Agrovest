@@ -1,7 +1,8 @@
 import React from "react";
-import Navbar from "../src/components/Navbar"; // Ensure the path is correct
-import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
-import "../src/app/style/about.css"; // Ensure this CSS file is correctly linked
+import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
+import "../src/app/style/globals.css";
+import { BsLinkedin } from "react-icons/bs";
 
 const teamMembers = [
   {
@@ -28,81 +29,54 @@ const teamMembers = [
     imgSrc: "https://randomuser.me/api/portraits/women/4.jpg",
     link: "https://www.linkedin.com/in/sara-khan/",
   },
-  {
-    name: "Tom Hanks",
-    role: "Designer",
-    imgSrc: "https://randomuser.me/api/portraits/men/5.jpg",
-    link: "https://www.linkedin.com/in/tom-hanks/",
-  },
-  {
-    name: "Emily Stone",
-    role: "Marketing Lead",
-    imgSrc: "https://randomuser.me/api/portraits/women/6.jpg",
-    link: "https://www.linkedin.com/in/emily-stone/",
-  },
-  {
-    name: "Ryan Howard",
-    role: "Sales Director",
-    imgSrc: "https://randomuser.me/api/portraits/men/7.jpg",
-    link: "https://www.linkedin.com/in/ryan-howard/",
-  },
-  {
-    name: "Mia Wong",
-    role: "Customer Success",
-    imgSrc: "https://randomuser.me/api/portraits/women/8.jpg",
-    link: "https://www.linkedin.com/in/mia-wong/",
-  },
-  {
-    name: "James Bond",
-    role: "Operations",
-    imgSrc: "https://randomuser.me/api/portraits/men/9.jpg",
-    link: "https://www.linkedin.com/in/james-bond/",
-  },
-  {
-    name: "Ana Rosa",
-    role: "HR Manager",
-    imgSrc: "https://randomuser.me/api/portraits/women/10.jpg",
-    link: "https://www.linkedin.com/in/ana-rosa/",
-  },
 ];
 
 const About = () => {
   return (
     <div className="about-page">
-      {/* Render Navbar */}
       <Navbar />
 
-      {/* Main Content */}
-      <div className="about-content">
-        <h1>About Us</h1>
-        <p className="about-description">
-          Welcome to Agrovestors! We are dedicated to revolutionizing agriculture in Africa through innovative solutions and a commitment to sustainable farming practices. Our mission is to empower local farmers with the tools and resources they need to thrive in an ever-changing environment.
-          <br /><br />
-          We provide cutting-edge technology that helps improve crop yields, optimize resource management, and enhance market access. By leveraging data-driven insights, we aim to build a resilient agricultural ecosystem that not only meets the demands of today but also safeguards the future of farming for generations to come.
-          <br /><br />
-          Join us in making a positive impact on food security and the agricultural economy. Together, we can transform the agricultural landscape and foster sustainable practices that benefit both farmers and consumers alike.
-        </p>
-
-        {/* Team Section */}
-        <div className="team-section">
-          <h2>Meet the Team</h2>
-          <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="team-member">
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  <img src={member.imgSrc} alt={member.name} className="team-img" />
-                </a>
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-              </div>
-            ))}
-          </div>
+      {/* Hero Section with Text Overlay */}
+      <div className="relative w-full">
+        <img
+          src="https://cdn.shortpixel.ai/spai/q_lossy+w_642+to_webp+ret_img/agra.org/wp-content/themes/agra/assets/img/circle-bg-05.png"
+          alt="About Us"
+          className="w-full object-cover h-[500px]"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+          <h1 className="text-4xl font-bold mb-4">About Us</h1>
+          <p className="text-lg max-w-2xl">
+            Welcome to Agrovestors! We are dedicated to revolutionizing
+            agriculture in Africa through innovative solutions and a commitment
+            to sustainable farming practices.
+          </p>
         </div>
       </div>
 
-      {/* Render Footer */}
-      <Footer />
+      {/* Team Section */}
+      <div className="team-section py-20 px-10 lg:px-40">
+        <h2 className="text-3xl font-semibold text-center mb-10">Meet Our Team</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="bg-white p-6 shadow-lg rounded-lg text-center">
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={member.imgSrc}
+                  alt={member.name}
+                  className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-green-500"
+                />
+              </a>
+              <h3 className="text-xl font-bold">{member.name}</h3>
+              <p className="text-gray-600">{member.role}</p>
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                <BsLinkedin className="text-blue-600 mx-auto mt-3" size={24} />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
 
+      <Footer />
     </div>
   );
 };
