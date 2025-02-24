@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "../src/components/nav"; // Ensure the path is correct
-import Footer from "../src/components/foot"; // Adjust the path based on your project structure
+import Navbar from "../src/components/Navbar"; // Ensure the path is correct
+import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
 import "../src/app/style/about.css"; // Ensure this CSS file is correctly linked
-import "../src/components/nav.css"; // Ensure this CSS file is correctly linked
 
 const teamMembers = [
   {
@@ -77,9 +76,9 @@ const About = () => {
       <div className="about-content">
         <h1>About Us</h1>
         <p className="about-description">
-          Welcome to Agrovestors! We are dedicated to revolutionizing agriculture in Africa through innovative solutions and a commitment to sustainable farming practices. Our mission is to empower local farmers with the tools and resources they need to thrive in an ever-changing environment. 
+          Welcome to Agrovestors! We are dedicated to revolutionizing agriculture in Africa through innovative solutions and a commitment to sustainable farming practices. Our mission is to empower local farmers with the tools and resources they need to thrive in an ever-changing environment.
           <br /><br />
-          We provide cutting-edge technology that helps improve crop yields, optimize resource management, and enhance market access. By leveraging data-driven insights, we aim to build a resilient agricultural ecosystem that not only meets the demands of today but also safeguards the future of farming for generations to come. 
+          We provide cutting-edge technology that helps improve crop yields, optimize resource management, and enhance market access. By leveraging data-driven insights, we aim to build a resilient agricultural ecosystem that not only meets the demands of today but also safeguards the future of farming for generations to come.
           <br /><br />
           Join us in making a positive impact on food security and the agricultural economy. Together, we can transform the agricultural landscape and foster sustainable practices that benefit both farmers and consumers alike.
         </p>
@@ -102,7 +101,8 @@ const About = () => {
       </div>
 
       {/* Render Footer */}
-    
+      <Footer />
+
     </div>
   );
 };

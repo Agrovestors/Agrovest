@@ -1,14 +1,14 @@
 // src/app/mission.tsx
 import React from "react";
-import Navbar from "../src/components/nav"; // Adjust the path based on your project structure
-import Footer from "../src/components/foot"; // Adjust the path based on your project structure
+import Navbar from "../src/components/Navbar"; // Ensure the path is correct
+import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
 import "../src/components/mission.css"; // Ensure this CSS file is correctly linked
 import "../src/app/style/about.css"; // Ensure this CSS file is correctly linked
-import "../src/components/nav.css"; // Ensure this CSS file is correctly linked
+import "../src/app/style/globals.css"; // Ensure this CSS file is correctly linked
 
 const Mission: React.FC = () => {
   return (
-    <div className="mission-page">
+    <div className="mission-page pt-20">
       {/* Render Navbar */}
       <Navbar />
 
@@ -30,30 +30,32 @@ const Mission: React.FC = () => {
           <h2>Watch Our Videos</h2>
           <div className="video-grid">
             {/* Add YouTube videos using iframe */}
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              title="YouTube video 1" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen 
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video 1"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             ></iframe>
 
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" 
-              title="YouTube video 2" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen 
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
+              title="YouTube video 2"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             ></iframe>
 
             {/* Add more videos as needed */}
           </div>
         </div>
       </div>
+      <Footer />
+
     </div>
   );
 };
