@@ -2,14 +2,25 @@
 import React from "react";
 import Navbar from "../src/components/Navbar"; // Ensure the path is correct
 import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
-import "../src/app/style/mission.css"; // Ensure this CSS file is correctly linked
+// import "../src/app/style/mission.css"; // Ensure this CSS file is correctly linked
 import "../src/app/style/globals.css"; // Ensure this CSS file is correctly linked
 
 const Mission: React.FC = () => {
   return (
     <div className="mission-page">
-      {/* Render Navbar */}
       <Navbar />
+
+            {/* Mission Section - Now at the Top */}
+            <div className="flex flex-col lg:flex-row items-center justify-between px-10 lg:px-40 py-20 bg-[#022c22] text-white rounded-lg">
+        <div className="w-full lg:max-w-[500px] text-center lg:text-left">
+          <h1 className="text-4xl font-bold mb-4">Mission</h1>
+          <p className="text-xl lg:pr-16 leading-relaxed">
+            Agrovestors is dedicated to revolutionizing agriculture across Africa.
+            Through innovative technology, sustainable practices, and strategic partnerships,
+            we empower farmers and agribusinesses to build a more productive future.
+          </p>
+        </div>
+      </div>
 
       {/* Main Content */}
       <div className="mission-content">

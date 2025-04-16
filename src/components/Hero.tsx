@@ -111,7 +111,6 @@ const Hero = () => {
             </p>
           </div>
 
-          <p>Note: It would be better to use images for this just like from agra.org homepage</p>
         </div>
       </div>
     </div>
