@@ -45,7 +45,7 @@ const Mission: React.FC = () => {
       <div className="pt-16">
         {/* Mission Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-10 lg:px-40 py-20 bg-[#022c22] text-white rounded-lg">
-          <div className="w-full lg:max-w-[500px] text-center lg:text-right">
+          <div className="w-full lg:max-w-[500px] text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Mission</h1>
             <p className="text-lg sm:text-xl lg:pr-16 leading-relaxed">
               At Agrovestors, we are committed to revolutionizing agriculture in Africa through innovative solutions that empower farmers, enhance productivity, and ensure food security.
@@ -66,13 +66,13 @@ const Mission: React.FC = () => {
             }}
           />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-          <div className="absolute flex flex-col items-end text-right text-white pr-4 sm:pr-8 lg:pr-12 w-full sm:w-[80%] max-w-2xl">
+          <div className="absolute flex flex-col items-end text-right text-white pr-2 sm:pr-4 ml-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Sustainable Farming for Africa</h2>
-            <p className="text-lg sm:text-xl font-medium max-w-2xl mb-6">
+            <p className="text-lg sm:text-xl font-medium mb-6">
               We leverage technology and community engagement to create sustainable farming practices, ensuring a resilient and prosperous future for African agriculture.
             </p>
             <h3 className="text-3xl sm:text-4xl font-extrabold mb-2">Our Vision</h3>
-            <p className="text-lg sm:text-xl font-medium max-w-2xl">
+            <p className="text-lg sm:text-xl font-medium">
               We lead the charge in sustainable agribusiness solutions, global food security, and cost control. Our vision is ambitious and borderless.
             </p>
           </div>
