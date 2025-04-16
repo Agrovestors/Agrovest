@@ -79,7 +79,7 @@ const Hero = () => {
 
         {/* Green Boxes with Icons */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md">
+          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-transform transition-shadow transition-colors duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#c8e6c9]">
             <GiFarmTractor className="text-6xl text-[#155724] mb-4" />
             <h3 className="text-xl font-bold">Modern Farming Equipment</h3>
             <p className="text-sm mt-2">
@@ -87,7 +87,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md">
+          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-transform transition-shadow transition-colors duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#c8e6c9]">
             <GiGrain className="text-6xl text-[#155724] mb-4" />
             <h3 className="text-xl font-bold">Sustainable Crop Production</h3>
             <p className="text-sm mt-2">
@@ -95,7 +95,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md">
+          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-transform transition-shadow transition-colors duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#c8e6c9]">
             <GiPlantsAndAnimals className="text-6xl text-[#155724] mb-4" />
             <h3 className="text-xl font-bold">Organic Livestock Farming</h3>
             <p className="text-sm mt-2">
@@ -103,14 +103,13 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md">
+          <div className="bg-[#d4edda] rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-transform transition-shadow transition-colors duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#c8e6c9]">
             <GiFarmer className="text-6xl text-[#155724] mb-4" />
             <h3 className="text-xl font-bold">Empowering Local Farmers</h3>
             <p className="text-sm mt-2">
               Supporting and educating local farmers to improve livelihoods.
             </p>
           </div>
-
         </div>
       </div>
     </div>

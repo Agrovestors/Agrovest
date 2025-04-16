@@ -18,7 +18,7 @@ const Navbar = () => {
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },
     { title: "Meet Our Team", href: "/meetOurTeam" },
-    { title: "Studio", href: "/studio" },
+    // { title: "Studio", href: "/studio" },
   ];
 
   const toggleMenu = () => {
