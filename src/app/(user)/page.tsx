@@ -1,9 +1,7 @@
-
 import BlogContent from "@/components/BlogContent";
 import Hero from "@/components/Hero";
 import { client } from "@/lib/createClient";
 import { groq } from "next-sanity";
-import { BsLinkedin } from "react-icons/bs";
 import Image from "next/image";
 
 const teamMembers = [
@@ -11,31 +9,31 @@ const teamMembers = [
     name: "John Doe",
     role: "CEO",
     imgSrc: "https://randomuser.me/api/portraits/men/1.jpg",
-    link: "https://www.linkedin.com/in/john-doe/",
+    quote: "Passionate about transforming agriculture!",
   },
   {
     name: "Jane Smith",
     role: "CTO",
     imgSrc: "https://randomuser.me/api/portraits/women/2.jpg",
-    link: "https://www.linkedin.com/in/jane-smith/",
+    quote: "Innovating for a sustainable future.",
   },
   {
     name: "Mark Lee",
     role: "Lead Developer",
     imgSrc: "https://randomuser.me/api/portraits/men/3.jpg",
-    link: "https://www.linkedin.com/in/mark-lee/",
+    quote: "Building tools to empower farmers.",
   },
   {
     name: "Sara Khan",
     role: "Product Manager",
     imgSrc: "https://randomuser.me/api/portraits/women/4.jpg",
-    link: "https://www.linkedin.com/in/sara-khan/",
+    quote: "Driven to create impactful solutions.",
   },
   {
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc: "/dev.jpg",
-    link: "https://www.linkedin.com/in/godwin-john-15a775287/",
+    quote: "Enthusiastic about coding for change!",
   },
 ];
 
@@ -61,25 +59,20 @@ export default async function Home() {
             {[...teamMembers, ...teamMembers].map((member, index) => (
               <div
                 key={`${member.name}-${index}`}
-                className="inline-block w-72 bg-white p-6 shadow-lg rounded-lg text-center mx-4"
+                className="inline-block w-96 bg-white p-8 shadow-lg rounded-lg text-center mx-6"
               >
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
                 <Image
-                    src={member.imgSrc}
-                    alt={member.name}
-                    width={112} // 28 * 4 (to match w-28)
-                    height={112} // 28 * 4 (to match h-28)
-                    className="object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
-                  />
-                </a>
+                  src={member.imgSrc}
+                  alt={member.name}
+                  width={112} // 28 * 4 (to match w-28)
+                  height={112} // 28 * 4 (to match h-28)
+                  className="object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
+                />
                 <h3 className="text-2xl font-bold">{member.name}</h3>
                 <p className="text-gray-600 text-lg">{member.role}</p>
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  <BsLinkedin
-                    className="text-blue-600 mx-auto mt-3 transition-transform duration-300 hover:scale-110"
-                    size={28}
-                  />
-                </a>
+                <p className="text-blue-600 text-base italic mt-2 px-4 break-words hyphens-auto max-h-16 overflow-y-visible">
+                  &quot;{member.quote}&quot;
+                </p>
               </div>
             ))}
           </div>
@@ -88,4 +81,3 @@ export default async function Home() {
     </main>
   );
 }
-
