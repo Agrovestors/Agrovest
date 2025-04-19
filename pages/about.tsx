@@ -3,6 +3,7 @@ import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import "../src/app/style/globals.css";
 import { BsLinkedin } from "react-icons/bs";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -51,9 +52,11 @@ const About = () => {
       {/* Hero Section with Overlay */}
       <div className="relative w-full max-h-[300px] overflow-hidden flex items-center justify-center">
         {/* Background Image */}
-        <img
+        <Image
           src="https://cdn.shortpixel.ai/spai/q_lossy+w_642+to_webp+ret_img/agra.org/wp-content/themes/agra/assets/img/circle-bg-05.png"
           alt="About Us"
+          width={1280}
+          height={300} 
           className="w-full h-full max-h-[300px] object-cover"
         />
 
@@ -77,10 +80,12 @@ const About = () => {
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white p-6 shadow-lg rounded-lg text-center">
               <a href={member.link} target="_blank" rel="noopener noreferrer">
-                <img
+              <Image
                   src={member.imgSrc}
                   alt={member.name}
-                  className="w-28 h-28 object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
+                  width={112} // Matches w-28 (28 * 4)
+                  height={112} // Matches h-28 (28 * 4)
+                  className="object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
                 />
               </a>
               <h3 className="text-2xl font-bold">{member.name}</h3>

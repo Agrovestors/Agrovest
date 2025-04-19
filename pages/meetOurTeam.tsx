@@ -3,7 +3,7 @@ import Navbar from "../src/components/Navbar"; // Ensure the path is correct
 import Footer from "../src/components/Footer"; // Adjust the path based on your project structure
 import "../src/app/style/globals.css"; // Ensure this CSS file is correctly linked
 import { BsLinkedin } from "react-icons/bs";
-
+import Image from "next/image"; // Ensure you have next/image installed
 
 const teamMembers = [
     {
@@ -91,9 +91,11 @@ const MeetOurTeam = () => {
                         <div key={index} className="bg-white p-6 shadow-lg rounded-lg text-center">
                             <a href={member.link} target="_blank" rel="noopener noreferrer" className="group">
                                 <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-green-500">
-                                    <img
+                                    <Image
                                         src={member.imgSrc}
                                         alt={member.name}
+                                        width={128} // Matches w-32 (32 * 4)
+                                        height={128} // Matches h-32 (32 * 4)
                                         className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110 group-hover:brightness-75"
                                     />
                                 </div>

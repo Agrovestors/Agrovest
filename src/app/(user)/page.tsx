@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import { client } from "@/lib/createClient";
 import { groq } from "next-sanity";
 import { BsLinkedin } from "react-icons/bs";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -63,10 +64,12 @@ export default async function Home() {
                 className="inline-block w-72 bg-white p-6 shadow-lg rounded-lg text-center mx-4"
               >
                 <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  <img
+                <Image
                     src={member.imgSrc}
                     alt={member.name}
-                    className="w-28 h-28 object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
+                    width={112} // 28 * 4 (to match w-28)
+                    height={112} // 28 * 4 (to match h-28)
+                    className="object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
                   />
                 </a>
                 <h3 className="text-2xl font-bold">{member.name}</h3>

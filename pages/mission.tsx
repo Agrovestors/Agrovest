@@ -3,6 +3,7 @@ import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import { BsLinkedin } from "react-icons/bs";
 import "../src/app/style/globals.css";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -55,11 +56,12 @@ const Mission: React.FC = () => {
 
         {/* Hero Section with Overlay */}
         <div className="relative w-full h-[400px] flex items-center justify-end overflow-hidden">
-          <img
+        <Image
             src="/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpg"
             alt="Sustainable farming in Africa"
+            width={1920} // Adjust based on expected image width
+            height={400} // Matches h-[400px]
             className="w-full h-[400px] object-cover"
-            loading="eager"
             onError={(e) => {
               console.error("Failed to load hero image, using fallback");
               e.currentTarget.src = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070";
@@ -141,9 +143,11 @@ const Mission: React.FC = () => {
                 className="bg-white p-6 shadow-lg rounded-lg text-center transition-transform duration-300 hover:scale-105"
               >
                 <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  <img
+                <Image
                     src={member.imgSrc}
                     alt={`${member.name}, ${member.role}`}
+                    width={112} // Matches w-28 (28 * 4)
+                    height={112} // Matches h-28 (28 * 4)
                     className="w-28 h-28 object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
                   />
                 </a>
