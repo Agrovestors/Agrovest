@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
                 <div className="w-full lg:max-w-[465px] text-center lg:text-left">
                     <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
                     <p className="text-lg lg:pr-16">
-                        If you have any questions or need more information, feel free to reach out to us. We'd love to hear from you!
+                        If you have any questions or need more information, feel free to reach out to us. We would love to hear from you!
                     </p>
                 </div>
             </div>
