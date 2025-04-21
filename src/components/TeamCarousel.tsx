@@ -85,7 +85,7 @@ export default function TeamCarousel() {
         }
       `}</style>
       <div className="team-section py-12 px-4 sm:px-6 lg:px-20 xl:px-40">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10">Meet Our Team</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10">What Our Team Has To Say</h2>
         <div className="flex justify-center">
           <div
             key={currentMember.name} // Use name as key to trigger animation

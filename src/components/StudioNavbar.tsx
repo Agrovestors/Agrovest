@@ -14,7 +14,7 @@ const StudioNavbar = (props: any) => {
           Go to Website
         </Link>
         <Logo
-          title="Bloggers Studio"
+          title="Agrovestors Studio"
           className="text-2xl hidden md:inline-flex"
         />
         <p className="text-sm">Studio for Blog Content</p>
