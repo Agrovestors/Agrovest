@@ -33,18 +33,11 @@ const teamMembers = [
     speech: "Augustine crafts compelling stories to promote Agrovest’s impact in the agricultural sector."
   },
   {
-    name: "Mark Lee",
-    role: "Lead Developer",
-    imgSrc: "https://randomuser.me/api/portraits/men/3.jpg",
-    quote: "Building tools to empower farmers.",
-    speech: "Mark designs scalable systems to enhance Agrovest’s technological capabilities."
-  },
-  {
-    name: "Sara Khan",
-    role: "Product Manager",
-    imgSrc: "https://randomuser.me/api/portraits/women/4.jpg",
-    quote: "Driven to create impactful solutions.",
-    speech: "Sara ensures Agrovest’s products meet the needs of farmers and stakeholders."
+    name: "Dr Akaebubechukwu James-Unueze",
+    role: "Project Manager",
+    imgSrc: "/aka.jpg",
+    quote: "Enthusiastic about transforming agriculture!",
+    speech: "Augustine crafts compelling stories to promote Agrovest’s impact in the agricultural sector."
   },
 ];
 
