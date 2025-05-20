@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const latestPost = posts[0] || {};
 
   return {
-    title: "Home - Agrovestors Farm Tech",
+    title: "Agrovestors Farm Tech",
     description:
       latestPost?.title
         ? `Explore the latest in sustainable agriculture: ${latestPost.title}`
