@@ -1,10 +1,8 @@
-import { createClient } from 'next-sanity'
+import { createClient } from 'next-sanity';
 
-import { apiVersion, dataset, projectId } from '../env'
-
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
-})
+  export const client = createClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '4cq9bgt6',
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+    apiVersion: '2021-08-31',
+    useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  });

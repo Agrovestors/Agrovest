@@ -1,6 +1,7 @@
 import { groq } from "next-sanity";
-import { Post } from "../../../../../types";
-import { client, urlFor } from "@/lib/createClient";
+import { Post } from "@/sanity/types";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import Container from "@/components/Container";
 import Image from "next/image";
 import {
@@ -23,23 +24,36 @@ interface Props {
 export const revalidate = 30;
 
 export const generateStaticParams = async () => {
-  const query = groq`*[_type == 'post']{
-        slug
-    }`;
-  const slugs: Post[] = await client.fetch(query);
+  const getAllPostSlugs = groq`*[_type == 'post']{
+    slug
+  }`;
+  const slugs: Post[] = await client.fetch(getAllPostSlugs);
   const slugRoutes = slugs.map((slug) => slug?.slug?.current);
   return slugRoutes?.map((slug) => ({
     slug,
   }));
 };
 
+const postBySlug = groq`*[_type == 'post' && slug.current == $slug][0]{
+  _id,
+  title,
+  slug,
+  mainImage { asset->{_ref}, alt },
+  body,
+  publishedAt,
+  author->{
+    name,
+    image { asset->{_ref}, alt },
+    description
+  }
+}`;
+
 const SlugPage = async ({ params: { slug } }: Props) => {
-  const query = groq`*[_type == 'post' && slug.current == $slug][0]{
-        ...,
-        body,
-        author->
-    }`;
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(postBySlug, { slug });
+
+  if (!post) {
+    return <div>Post not found</div>;
+  }
 
   return (
     <Container className="mb-10">
@@ -49,7 +63,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
             src={urlFor(post?.mainImage).url()}
             width={500}
             height={500}
-            alt="main image"
+            alt={post?.mainImage?.alt || "main image"}
             className="object-cover w-full"
           />
         </div>
@@ -58,7 +72,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
             src={urlFor(post?.author?.image).url()}
             width={200}
             height={200}
-            alt="author image"
+            alt={post?.author?.image?.alt || "author image"}
             className="w-32 h-32 rounded-full object-cover"
           />
           <p className="text-3xl text-[#5442ae] font-semibold">
@@ -70,35 +84,35 @@ const SlugPage = async ({ params: { slug } }: Props) => {
           <div className="flex items-center gap-3">
             <Link
               href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
+              target="_blank"
               className="w-10 h-10 bg-red-600 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
             >
               <FaYoutube />
             </Link>
             <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
+              href={"https://github.com"}
+              target="_blank"
               className="w-10 h-10 bg-gray-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
             >
               <FaGithub />
             </Link>
             <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
+              href={"https://facebook.com"}
+              target="_blank"
               className="w-10 h-10 bg-[#3e5b98] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
             >
               <FaFacebookF />
             </Link>
             <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
+              href={"https://instagram.com"}
+              target="_blank"
               className="w-10 h-10 bg-[#bc1888] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
             >
               <FaInstagram />
             </Link>
             <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
+              href={"https://linkedin.com"}
+              target="_blank"
               className="w-10 h-10 bg-blue-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
             >
               <FaLinkedin />
