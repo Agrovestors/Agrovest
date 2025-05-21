@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 import logo from "../images/AGROINVESTORLOGO.png";
 
 // Define TypeScript interfaces for navigation structure
@@ -17,23 +17,25 @@ interface NavItem {
 interface SubNavItem {
   title: string;
   href: string;
-  items?: SubSubNavItem[]; // Renamed subDropdown to items for consistency
+  items?: SubSubNavItem[];
 }
 
 interface SubSubNavItem {
   title: string;
   href: string;
-  items?: { title: string; href: string }[]; // Allow deeper nesting
+  items?: { title: string; href: string }[];
 }
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [subDropdownTimeout, setSubDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   const navigation: NavItem[] = [
-    { title: "Home", href: "/" },
     {
       title: "About",
       href: "/about",
@@ -86,10 +88,7 @@ const Navbar = () => {
               items: [
                 { title: "Raw Material Quality Check", href: "/values/research/other/raw-material" },
                 { title: "Feed Processing/Control", href: "/values/research/other/feed-processing" },
-                {
-                  title: "Food By-Product Production",
-                  href: "/values/research/other/food-byproduct",
-                },
+                { title: "Food By-Product Production", href: "/values/research/other/food-byproduct" },
               ],
             },
           ],
@@ -153,11 +152,48 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    if (isOpen) setOpenDropdown(null);
+    if (isOpen) {
+      setOpenDropdown(null);
+      setOpenSubDropdown(null);
+    }
   };
 
   const toggleDropdown = (title: string) => {
     setOpenDropdown(openDropdown === title ? null : title);
+    if (openDropdown !== title) setOpenSubDropdown(null); // Reset sub-dropdown when changing top-level dropdown
+  };
+
+  const handleMouseEnter = (title: string, isSubDropdown: boolean = false) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    if (subDropdownTimeout) {
+      clearTimeout(subDropdownTimeout);
+      setSubDropdownTimeout(null);
+    }
+    if (isSubDropdown) {
+      setOpenSubDropdown(title);
+    } else {
+      setOpenDropdown(title);
+      setOpenSubDropdown(null); // Reset sub-dropdown when entering a new top-level dropdown
+    }
+  };
+
+  const handleMouseLeave = (isSubDropdown: boolean = false) => {
+    const timeout = setTimeout(() => {
+      if (isSubDropdown) {
+        setOpenSubDropdown(null);
+      } else {
+        setOpenDropdown(null);
+        setOpenSubDropdown(null);
+      }
+    }, 2000);
+    if (isSubDropdown) {
+      setSubDropdownTimeout(timeout);
+    } else {
+      setDropdownTimeout(timeout);
+    }
   };
 
   useEffect(() => {
@@ -169,76 +205,228 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) clearTimeout(dropdownTimeout);
+      if (subDropdownTimeout) clearTimeout(subDropdownTimeout);
+    };
+  }, [dropdownTimeout, subDropdownTimeout]);
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-4 z-50 transition-all duration-300 
-      ${isScrolled ? "bg-[#022c22b0] backdrop-blur-md" : "bg-[#022c22d9] backdrop-blur-sm"}`}
+      className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-6 z-50 transition-all duration-500 ease-in-out 
+      ${isScrolled ? "bg-[#022c22e6] backdrop-blur-lg shadow-md" : "bg-[#022c22f2] backdrop-blur-md"}`}
       aria-label="Main navigation"
     >
+      <style jsx>{`
+        @keyframes bounceIn {
+          0% { transform: scale(0.95) translateY(-8px); opacity: 0; }
+          60% { transform: scale(1.05) translateY(2px); opacity: 0.9; }
+          100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        @keyframes hamburgerToXTop {
+          0% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(6px) rotate(50deg); }
+          100% { transform: translateY(6px) rotate(45deg); }
+        }
+        @keyframes hamburgerToXBottom {
+          0% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-6px) rotate(-50deg); }
+          100% { transform: translateY(-6px) rotate(-45deg); }
+        }
+        @keyframes hamburgerMiddleFade {
+          0% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0; transform: scale(0); }
+          100% { opacity: 0; transform: scale(0); }
+        }
+        @keyframes hamburgerPulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+          100% { transform: scale(1); }
+        }
+        .hamburger-icon {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .hamburger-line {
+          width: 100%;
+          height: 2.5px;
+          background: white;
+          border-radius: 2px;
+          transition: background 0.4s ease;
+        }
+        .hamburger-open .hamburger-line:nth-child(1) {
+          animation: hamburgerToXTop 0.4s forwards cubic-bezier(0.68, -0.05, 0.32, 1.6);
+          background: #4ade80;
+        }
+        .hamburger-open .hamburger-line:nth-child(2) {
+          animation: hamburgerMiddleFade 0.4s forwards cubic-bezier(0.68, -0.05, 0.32, 1.6);
+        }
+        .hamburger-open .hamburger-line:nth-child(3) {
+          animation: hamburgerToXBottom 0.4s forwards cubic-bezier(0.68, -0.05, 0.32, 1.6);
+          background: #4ade80;
+        }
+        .hamburger-closed .hamburger-line {
+          animation: none;
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          background: white;
+        }
+        .hamburger-button.hamburger-open {
+          animation: hamburgerPulse 0.4s ease;
+        }
+        .mobile-menu-enter {
+          transform: translateY(-100%) scale(0.95);
+          opacity: 0;
+        }
+        .mobile-menu-enter-active {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+          transition: transform 0.5s cubic-bezier(0.68, -0.05, 0.32, 1.6), opacity 0.5s ease-out, scale 0.5s ease-out;
+        }
+        .mobile-menu-exit {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        .mobile-menu-exit-active {
+          transform: translateY(-100%) scale(0.95);
+          opacity: 0;
+          transition: transform 0.5s cubic-bezier(0.68, -0.05, 0.32, 1.6), opacity 0.5s ease-out, scale 0.5s ease-out;
+        }
+        .mobile-menu-item {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        .mobile-menu-enter-active .mobile-menu-item {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .mobile-menu-exit-active .mobile-menu-item {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .hamburger-button {
+          transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .hamburger-button:hover {
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.5));
+        }
+        .hamburger-button:active {
+          transform: scale(0.95);
+        }
+        .animate-bounce-in {
+          animation: bounceIn 0.3s ease-out forwards;
+        }
+      `}</style>
+
       {/* Logo Section */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center group">
         <Image
           src={logo}
           alt="Agrovestors Farm Tech Logo"
-          width={50}
-          height={50}
+          width={48}
+          height={48}
           priority
+          className="transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6"
         />
-        <span className="text-white text-lg font-bold ml-2">Agrovestors Farm Tech</span>
+        <span className="text-white text-xl font-bold ml-3 group-hover:text-green-400 transition-colors duration-300">
+          Agrovestors Farm Tech
+        </span>
       </Link>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden">
+      <div className="block lg:hidden">
         <button
           onClick={toggleMenu}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
+          className={`p-1.5 rounded-full hover:bg-green-500/30 hamburger-button ${isOpen ? "hamburger-open" : ""}`}
         >
-          {isOpen ? <FiX className="text-2xl text-white" /> : <FiMenu className="text-2xl text-white" />}
+          <div className={`hamburger-icon ${isOpen ? "hamburger-open" : "hamburger-closed"}`}>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+          </div>
         </button>
       </div>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex gap-6 text-white" role="list">
+      <ul className="hidden lg:flex gap-0.5 text-white font-medium items-center" role="list">
         {navigation.map((item) => (
-          <li key={item.title} className="relative group">
+          <li key={item.title} className="relative">
             {item.dropdown ? (
-              <>
+              <div
+                className="group"
+                onMouseEnter={() => handleMouseEnter(item.title)}
+                onMouseLeave={() => handleMouseLeave()}
+              >
                 <button
-                  className={`flex items-center hover:text-gray-300 ${
-                    pathname && pathname.startsWith(item.href) ? "text-green-400 font-bold" : ""
+                  className={`flex items-center py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${
+                    pathname && pathname.startsWith(item.href)
+                      ? "text-green-400 font-semibold"
+                      : ""
                   }`}
                   aria-haspopup="true"
-                  aria-expanded={pathname ? pathname.startsWith(item.href) : false}
+                  aria-expanded={openDropdown === item.title}
                 >
                   {item.title}
-                  <FiChevronDown className="ml-1" />
+                  <FiChevronDown className="ml-1 transform transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" />
                 </button>
                 <ul
-                  className="absolute left-0 mt-2 w-64 bg-[#022c22] text-white shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200"
+                  className={`absolute left-0 top-full w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top ${
+                    openDropdown === item.title
+                      ? "opacity-100 visible pointer-events-auto animate-bounce-in"
+                      : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
+                  }`}
                   role="list"
+                  onMouseEnter={() => handleMouseEnter(item.title)}
+                  onMouseLeave={() => handleMouseLeave()}
                 >
                   {item.dropdown.map((subItem) => (
-                    <li key={subItem.title}>
+                    <li key={subItem.title} className="relative">
                       {subItem.items ? (
-                        <div className="relative group/sub">
+                        <div
+                          className="group/sub"
+                          onMouseEnter={() => handleMouseEnter(`${item.title}-${subItem.title}`, true)}
+                          onMouseLeave={() => handleMouseLeave(true)}
+                        >
                           <button
-                            className="w-full text-left px-4 py-2 hover:bg-[#1a473e]"
+                            className="w-full text-left px-4 py-2 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.3)] rounded-md transition-all duration-300 flex justify-between items-center text-sm"
                             aria-haspopup="true"
+                            aria-expanded={openSubDropdown === `${item.title}-${subItem.title}`}
                           >
                             {subItem.title}
-                            <FiChevronDown className="inline ml-1" />
+                            <FiChevronDown className="transform transition-transform duration-300 group-hover/sub:scale-125 group-hover/sub:-rotate-12" />
                           </button>
                           <ul
-                            className="absolute left-full top-0 w-64 bg-[#022c22] text-white shadow-lg opacity-0 group-hover/sub:opacity-100 group-hover/sub:visible invisible transition-all duration-200"
+                            className={`absolute left-full top-0 w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top-left ${
+                              openSubDropdown === `${item.title}-${subItem.title}`
+                                ? "opacity-100 visible pointer-events-auto animate-bounce-in"
+                                : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
+                            }`}
                             role="list"
+                            onMouseEnter={() => handleMouseEnter(`${item.title}-${subItem.title}`, true)}
+                            onMouseLeave={() => handleMouseLeave(true)}
                           >
-                            {subItem.items.map((subSubItem) => (
-                              <li key={subSubItem.title}>
+                            {subItem.items.map((subSubItem, index) => (
+                              <li
+                                key={subSubItem.title}
+                                className="transition-opacity duration-300 ease-in"
+                                style={{ transitionDelay: `${index * 50}ms` }}
+                              >
                                 <Link
                                   href={subSubItem.href}
-                                  className="block px-4 py-2 hover:bg-[#1a473e] hover:text-gray-300"
-                                  aria-current={pathname === subSubItem.href ? "page" : undefined}
+                                  className="block px-4 py-2 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.3)] rounded-md transition-all duration-300 text-sm"
+                                  aria-current={
+                                    pathname === subSubItem.href ? "page" : undefined
+                                  }
                                 >
                                   {subSubItem.title}
                                 </Link>
@@ -249,7 +437,7 @@ const Navbar = () => {
                       ) : (
                         <Link
                           href={subItem.href}
-                          className="block px-4 py-2 hover:bg-[#1a473e] hover:text-gray-300"
+                          className="block px-4 py-2 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.3)] rounded-md transition-all duration-300 text-sm"
                           aria-current={pathname === subItem.href ? "page" : undefined}
                         >
                           {subItem.title}
@@ -258,11 +446,13 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             ) : (
               <Link
                 href={item.href}
-                className={`hover:text-gray-300 ${pathname === item.href ? "text-green-400 font-bold" : ""}`}
+                className={`py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${
+                  pathname === item.href ? "text-green-400 font-semibold" : ""
+                }`}
                 aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.title}
@@ -273,82 +463,107 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <ul className="fixed top-20 left-0 w-full bg-[#022c22] p-4 flex flex-col z-40" role="list">
-          {navigation.map((item) => (
-            <li key={item.title}>
-              {item.dropdown ? (
-                <>
-                  <button
-                    onClick={() => toggleDropdown(item.title)}
-                    className="w-full text-left text-white py-2 flex justify-between items-center"
-                    aria-haspopup="true"
-                    aria-expanded={openDropdown === item.title}
-                  >
-                    {item.title}
-                    <FiChevronDown className="ml-1" />
-                  </button>
-                  {openDropdown === item.title && (
-                    <ul className="pl-4" role="list">
-                      {item.dropdown.map((subItem) => (
-                        <li key={subItem.title}>
-                          {subItem.items ? (
-                            <>
-                              <button
-                                onClick={() => toggleDropdown(`${item.title}-${subItem.title}`)}
-                                className="w-full text-left text-white py-2 flex justify-between items-center"
-                                aria-haspopup="true"
-                                aria-expanded={openDropdown === `${item.title}-${subItem.title}`}
-                              >
-                                {subItem.title}
-                                <FiChevronDown className="ml-1" />
-                              </button>
-                              {openDropdown === `${item.title}-${subItem.title}` && (
-                                <ul className="pl-4" role="list">
-                                  {subItem.items.map((subSubItem) => (
-                                    <li key={subSubItem.title}>
-                                      <Link
-                                        href={subSubItem.href}
-                                        className="block text-white py-2 hover:text-gray-300"
-                                        onClick={() => setIsOpen(false)}
-                                        aria-current={pathname === subSubItem.href ? "page" : undefined}
-                                      >
-                                        {subSubItem.title}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </>
-                          ) : (
-                            <Link
-                              href={subItem.href}
-                              className="block text-white py-2 hover:text-gray-300"
-                              onClick={() => setIsOpen(false)}
-                              aria-current={pathname === subItem.href ? "page" : undefined}
-                            >
-                              {subItem.title}
-                            </Link>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="block text-white py-2 hover:text-gray-300"
-                  onClick={() => setIsOpen(false)}
-                  aria-current={pathname === item.href ? "page" : undefined}
+      <ul
+        className={`fixed top-20 left-0 w-full bg-[#022c22] p-6 flex flex-col z-40 ${
+          isOpen
+            ? "mobile-menu-enter-active"
+            : "mobile-menu-exit-active mobile-menu-exit"
+        } ${!isOpen && "hidden"}`}
+        role="list"
+      >
+        {navigation.map((item, index) => (
+          <li
+            key={item.title}
+            className="border-b border-green-500/20 last:border-b-0 mobile-menu-item"
+            style={{ transitionDelay: `${index * 50}ms` }}
+          >
+            {item.dropdown ? (
+              <>
+                <button
+                  onClick={() => toggleDropdown(item.title)}
+                  className="w-full text-left text-white py-3 flex justify-between items-center text-base hover:text-green-400 transition-colors duration-300"
+                  aria-haspopup="true"
+                  aria-expanded={openDropdown === item.title}
                 >
                   {item.title}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
+                  <FiChevronDown
+                    className={`transform transition-transform duration-300 ${
+                      openDropdown === item.title ? "scale-125 -rotate-12" : ""
+                    }`}
+                  />
+                </button>
+                {openDropdown === item.title && (
+                  <ul className="pl-4" role="list">
+                    {item.dropdown.map((subItem) => (
+                      <li key={subItem.title} className="border-l border-green-500/20">
+                        {subItem.items ? (
+                          <>
+                            <button
+                              onClick={() =>
+                                toggleDropdown(`${item.title}-${subItem.title}`)
+                              }
+                              className="w-full text-left text-white py-2 flex justify-between items-center text-sm hover:text-green-400 transition-colors duration-300"
+                              aria-haspopup="true"
+                              aria-expanded={
+                                openDropdown === `${item.title}-${subItem.title}`
+                              }
+                            >
+                              {subItem.title}
+                              <FiChevronDown
+                                className={`transform transition-transform duration-300 ${
+                                  openDropdown === `${item.title}-${subItem.title}`
+                                    ? "scale-125 -rotate-12"
+                                    : ""
+                                }`}
+                              />
+                            </button>
+                            {openDropdown === `${item.title}-${subItem.title}` && (
+                              <ul className="pl-4" role="list">
+                                {subItem.items.map((subSubItem) => (
+                                  <li key={subSubItem.title}>
+                                    <Link
+                                      href={subSubItem.href}
+                                      className="block text-white py-2 text-sm hover:text-green-400 transition-colors duration-300"
+                                      onClick={() => setIsOpen(false)}
+                                      aria-current={
+                                        pathname === subSubItem.href ? "page" : undefined
+                                      }
+                                    >
+                                      {subSubItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </>
+                        ) : (
+                          <Link
+                            href={subItem.href}
+                            className="block text-white py-2 text-sm hover:text-green-400 transition-colors duration-300"
+                            onClick={() => setIsOpen(false)}
+                            aria-current={pathname === subItem.href ? "page" : undefined}
+                          >
+                            {subItem.title}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            ) : (
+              <Link
+                href={item.href}
+                className="block text-white py-3 text-base hover:text-green-400 transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+                aria-current={pathname === item.href ? "page" : undefined}
+              >
+                {item.title}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
