@@ -1,7 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
-import { schemaTypes } from "./src/sanity/schemas";
 import StudioNavbar from "./src/components/StudioNavbar";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
@@ -14,8 +13,9 @@ export default defineConfig({
   projectId,
   dataset,
   plugins: [deskTool(), visionTool()],
+  // No schema needed for image uploads only
   schema: {
-    types: schemaTypes,
+    types: [], // Empty schema since we're only uploading images
   },
   studio: {
     components: {

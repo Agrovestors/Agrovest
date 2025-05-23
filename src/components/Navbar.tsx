@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
 
-// Define TypeScript interfaces for navigation structure
 interface NavItem {
   title: string;
   href: string;
@@ -40,7 +39,7 @@ const Navbar = () => {
       href: "/about",
       dropdown: [
         { title: "A.F-Tech", href: "/about/af-tech" },
-        { title: "Meet Our Team", href: "/meetOurTeam" },
+        { title: "Meet Our Team", href: "/meet-our-team" },
         { title: "Vision and Mission", href: "/mission" },
         { title: "Our Legacy", href: "/about/legacy" },
         { title: "Philosophy", href: "/about/philosophy" },
@@ -325,10 +324,9 @@ const Navbar = () => {
         }
       `}</style>
 
-      {/* Logo Section */}
       <Link href="/" className="flex items-center group" aria-label="Agrovestors Farm Tech Home">
         <Image
-          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png"
+          src="https://cdn.sanity.io/images/mlakfsrt/production/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png"
           alt="Agrovestors Farm Tech Logo"
           width={48}
           height={48}
@@ -341,7 +339,6 @@ const Navbar = () => {
         </span>
       </Link>
 
-      {/* Mobile Menu Button */}
       <div className="block lg:hidden">
         <button
           onClick={toggleMenu}
@@ -357,7 +354,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Desktop Navigation */}
       <ul className="hidden lg:flex gap-0.5 text-white font-medium items-center" role="list">
         {navigation.map((item) => (
           <li key={item.title} className="relative">
@@ -462,7 +458,6 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Mobile Navigation */}
       <ul
         className={`fixed top-20 left-0 w-full bg-[#022c22] p-6 flex flex-col z-40 ${
           isOpen
