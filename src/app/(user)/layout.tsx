@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     title: "Agrovestors Farm Tech - Sustainable Agriculture Solutions",
     description:
       "Join Agrovestors Farm Tech to explore sustainable farming practices and innovative agricultural technology.",
-    url: "https://your-site.com", // Replace with your production URL
+    url: "https://agrovestors.com", // Updated to production URL
     siteName: "Agrovestors Farm Tech",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+        url: "/AGROINVESTORLOGO.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Farm Tech Logo",
@@ -44,10 +44,8 @@ export const metadata: Metadata = {
     title: "Agrovestors Farm Tech",
     description:
       "Sustainable agriculture and innovative farm technology with Agrovestors.",
-    images: [
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
-    ],
-    creator: "@YourTwitterHandle", // Replace with your Twitter handle
+    images: ["/AGROINVESTORLOGO.png"],
+    creator: "@AgrovestorsTech", // Replace with actual handle
   },
   robots: {
     index: true,
@@ -61,10 +59,10 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico", // Ensure this points to public/favicon.ico
+    icon: "/favicon.ico",
   },
   alternates: {
-    canonical: "https://your-site.com", // Replace with your production URL
+    canonical: "https://agrovestors.com",
   },
 };
 
@@ -76,15 +74,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Fallback favicon link */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        {/* Preload logo image */}
         <link
           rel="preload"
-          href="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png"
+          href="/AGROINVESTORLOGO.png"
           as="image"
         />
-        {/* Schema.org JSON-LD for Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,14 +87,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Agrovestors Farm Tech",
-              url: "https://your-site.com", // Replace with your production URL
-              logo: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+              url: "https://agrovestors.com",
+              logo: "/AGROINVESTORLOGO.png",
               description:
                 "Agrovestors Farm Tech provides innovative and sustainable agriculture solutions.",
               sameAs: [
-                "https://twitter.com/YourTwitterHandle", // Replace with actual social links
-                "https://www.linkedin.com/company/yourcompany",
-                "https://www.facebook.com/yourcompany",
+                "https://twitter.com/AgrovestorsTech", // Replace with actual links
+                "https://www.linkedin.com/company/agrovestors",
+                "https://www.facebook.com/agrovestors",
               ],
             }),
           }}

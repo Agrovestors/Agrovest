@@ -2,24 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-  0% {
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
-  }
+}
+.fade-in-left {
+  animation: fadeInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform, opacity;
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+}
+.pulse-hover:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes staggeredFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.staggered-fade {
+  animation: staggeredFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;

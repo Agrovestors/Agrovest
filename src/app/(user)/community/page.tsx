@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Metadata } from "next";
 
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
     title: "Community - Agrovestors Farm Tech",
     description: "Join the Agrovestors Farm Tech community to support sustainable agriculture.",
     url: "https://agrovestors.com/community",
-    images: [{ url: "/images/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+    images: [{ url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
   },
   alternates: { canonical: "https://agrovestors.com/community" },
 };
@@ -26,7 +24,6 @@ export default function Community() {
 
   return (
     <div className="community-page bg-gray-50 min-h-screen">
-      <Navbar />
       <Container className="pt-16">
         <section className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-[#022c22] to-[#065f46] text-white rounded-lg p-10 mb-12 animate-fade-in-up">
           <div className="w-full lg:max-w-[500px] text-center lg:text-left">
@@ -52,7 +49,6 @@ export default function Community() {
           </div>
         </section>
       </Container>
-      <Footer />
     </div>
   );
 }

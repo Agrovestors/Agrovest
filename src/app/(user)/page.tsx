@@ -5,16 +5,16 @@ import { client } from "@/lib/createClient";
 import { groq } from "next-sanity";
 import { Metadata } from "next";
 
-export const revalidate = 30; // Revalidate every 30 seconds for fresh content
+export const revalidate = 30;
 
 const query = groq`*[_type == 'post']{
   ...,
   author->,
   categories[]->,
-  mainImage,
+  "mainImage": mainImage.asset->url,
   publishedAt,
   slug
-} | order(_createdAt desc)`; // Changed to desc for newest posts first
+} | order(_createdAt desc)`;
 
 export async function generateMetadata(): Promise<Metadata> {
   const posts = await client.fetch(query);
@@ -32,19 +32,20 @@ export async function generateMetadata(): Promise<Metadata> {
         latestPost?.title
           ? `Read our latest post: ${latestPost.title}`
           : "Sustainable agriculture and farm technology insights.",
+      url: "https://agrovestors.com",
       images: latestPost?.mainImage
         ? [
             {
-              url: latestPost.mainImage.asset.url,
+              url: latestPost.mainImage,
               width: 1200,
               height: 630,
               alt: latestPost.title || "Agrovestors Farm Tech",
             },
           ]
-        : ["/AGROINVESTORLOGO.png"],
+        : [{ url: "/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
     },
     alternates: {
-      canonical: "https://your-site.com", // Replace with your production URL
+      canonical: "https://agrovestors.com",
     },
   };
 }
@@ -67,7 +68,6 @@ export default async function Home() {
         </h2>
         <TeamCarousel />
       </section>
-      {/* Schema.org JSON-LD for Blog Posts */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -75,7 +75,7 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "Blog",
             name: "Agrovestors Farm Tech Blog",
-            url: "https://your-site.com", // Replace with your production URL
+            url: "https://agrovestors.com",
             blogPost: posts.map((post: any) => ({
               "@type": "BlogPosting",
               headline: post.title,
@@ -84,8 +84,8 @@ export default async function Home() {
                 "@type": "Person",
                 name: post.author?.name,
               },
-              image: post.mainImage?.asset.url,
-              url: `https://your-site.com/post/${post.slug?.current}`,
+              image: post.mainImage,
+              url: `https://agrovestors.com/post/${post.slug?.current}`,
               description: post.description || post.title,
             })),
           }),

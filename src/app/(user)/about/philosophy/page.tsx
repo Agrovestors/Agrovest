@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Metadata } from "next";
 import { client } from "@/lib/createClient";
@@ -14,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: philosophy?.title || "Our Philosophy - Agrovestors Farm Tech",
       description: philosophy?.description || "Discover the philosophy driving Agrovestors Farm Tech’s mission.",
       url: "https://agrovestors.com/about/philosophy",
-      images: [{ url: "/images/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+      images: [{ url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
     },
     alternates: { canonical: "https://agrovestors.com/about/philosophy" },
   };
@@ -25,7 +23,7 @@ export default async function Philosophy() {
   const fallback = {
     title: "Our Philosophy",
     description: "Discover the philosophy driving Agrovestors Farm Tech’s mission.",
-    mainImage: "/images/AGROINVESTORLOGO.png",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
     content: "Our philosophy is rooted in sustainability, innovation, and community empowerment.",
   };
 
@@ -33,7 +31,6 @@ export default async function Philosophy() {
 
   return (
     <div className="philosophy-page bg-gray-50 min-h-screen">
-      <Navbar />
       <Container className="py-16 px-6">
         <section className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">{data.title}</h1>
@@ -49,7 +46,7 @@ export default async function Philosophy() {
           <div className="prose text-gray-600 mt-8">{data.content}</div>
         </section>
       </Container>
-      <Footer />
+
     </div>
   );
 }

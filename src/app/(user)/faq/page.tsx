@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import { client } from "@/lib/createClient";
 

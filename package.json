@@ -9,21 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@portabletext/react": "^3.0.11",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.0.0",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
+    "framer-motion": "^12.12.2",
     "next": "^15.3.2",
     "next-sanity": "^7.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^4.12.0",
+    "react-parallax-tilt": "^1.7.295",
     "react-slick": "^0.30.3",
     "react-slideshow": "^0.0.1",
+    "react-swipeable": "^7.0.2",
+    "react-tsparticles": "^2.12.2",
     "sanity": "^3.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.0",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",

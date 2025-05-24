@@ -1,108 +1,98 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Image from "next/image";
-import Link from "next/link";
 import { Metadata } from "next";
-import { BsLinkedin } from "react-icons/bs";
-import TeamCarousel from "@/components/TeamCarousel";
+import TeamGrid from "@/components/TeamGrid";
 
-export const metadata: Metadata = {
-  title: "Meet Our Team | Agrovestors Farm Tech",
-  description: "Get to know the team driving Agrovestors Farm Tech’s mission.",
-  keywords: ["Agrovestors team", "agritech team", "sustainable farming"],
-  openGraph: {
-    title: "Meet Our Team - Agrovestors Farm Tech",
-    description: "Discover the experts leading sustainable agriculture in Africa.",
-    url: "https://agrovestors.com/meet-our-team",
-    images: [{ url: "/images/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+interface TeamMember {
+  name: string;
+  role: string;
+  imgSrc: string;
+  quote: string;
+  speech: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: "Stephen T. Onyewuenyi",
+    role: "CEO",
+    imgSrc:
+      "https://cdn.sanity.io/images/mlakfsrt/production/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
+    quote: "Passionate about transforming agriculture!",
+    speech:
+      "Stephen leads Agrovest with a vision to revolutionize farming through technology and sustainable practices.",
   },
-  alternates: { canonical: "https://agrovestors.com/meet-our-team" },
-};
+  {
+    name: "Joseph Ogakwu Enare",
+    role: "Head of IT Team",
+    imgSrc:
+      "https://cdn.sanity.io/images/mlakfsrt/production/fb5600b633c9385b136b11774edfe18c60a1ea14-4096x2731.png",
+    quote: "Innovating for a sustainable future.",
+    speech:
+      "Joseph drives the development of cutting-edge IT solutions to empower farmers.",
+  },
+  {
+    name: "Godwin Adakonye John",
+    role: "Fullstack Developer",
+    imgSrc:
+      "https://cdn.sanity.io/images/mlakfsrt/production/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png", // Placeholder; replace with correct URL
+    quote: "Enthusiastic about coding for change!",
+    speech:
+      "Godwin builds robust applications to support Agrovest’s mission of agricultural innovation.",
+  },
+  {
+    name: "Augustine C. Ibechukwu",
+    role: "Head of the Media Team",
+    imgSrc:
+      "https://cdn.sanity.io/images/mlakfsrt/production/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
+    quote: "Enthusiastic about transforming agriculture!",
+    speech:
+      "Augustine crafts compelling stories to promote Agrovest’s impact in the agricultural sector.",
+  },
+  {
+    name: "Dr Akaebubechukwu James-Unueze",
+    role: "Project Manager",
+    imgSrc:
+      "https://cdn.sanity.io/images/mlakfsrt/production/94297a0585bc5ad3220707d35e89347176f6398e-2807x3258.png",
+    quote: "Enthusiastic about transforming agriculture!",
+    speech:
+      "Dr Akaebubechukwu ensures projects align with Agrovest’s mission for sustainable agriculture.",
+  },
+];
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Meet Our Team | Agrovestors Farm Tech",
+    description: "Meet the dedicated team behind Agrovestors Farm Tech.",
+    openGraph: {
+      title: "Meet Our Team - Agrovestors Farm Tech",
+      description: "Meet the dedicated team behind Agrovestors Farm Tech.",
+      url: "https://agrovestors.com/meet-our-team",
+      images: [
+        {
+          url: "https://cdn.sanity.io/images/mlakfsrt/production/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+          width: 1080,
+          height: 763,
+          alt: "Agrovestors Logo",
+        },
+      ],
+    },
+    alternates: { canonical: "https://agrovestors.com/meet-our-team" },
+  };
+}
 
 export default function MeetOurTeam() {
-  const staticContent = {
-    title: "Meet Our Team",
-    description: "Our team at Agrovestors Farm Tech is dedicated to transforming agriculture through innovation.",
-    teamMembers: [
-      { name: "Stephen T. Onyewuenyi", role: "CEO", image: "/images/12718aec-f22f-4338-b924-4014d4aeee33.jpeg", linkedin: "#" },
-      { name: "Joseph Ogakwu Enare", role: "Head of IT Team", image: "/images/97410053-9bf0-42ba-bd35-4aa783147a3a.jpeg", linkedin: "#" },
-      { name: "Godwin Adakonye John", role: "Fullstack Developer", image: "/images/b292af73-c646-43c5-9838-e84f8683b268.jpeg", linkedin: "#" },
-      { name: "Augustine C. Ibechukwu", role: "Head of Media Team", image: "/images/ellen-chege-tea-farm.jpeg", linkedin: "#" },
-      { name: "Dr Akaebubechukwu James-Unueze", role: "Project Manager", image: "/images/landscaping-mistakes.jpeg", linkedin: "#" },
-    ],
-  };
-
   return (
     <div className="meet-our-team-page bg-gray-50 min-h-screen">
-      <Navbar />
-      <Container className="pt-16">
-        <section className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-[#022c22] to-[#065f46] text-white rounded-lg p-10 mb-12 animate-fade-in-up">
-          <div className="w-full lg:max-w-[500px] text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">{staticContent.title}</h1>
-            <p className="text-lg sm:text-xl lg:pr-16 leading-relaxed">{staticContent.description}</p>
-          </div>
+      <Container className="py-16 px-6">
+        <section className="max-w-7xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6 text-center">
+            Meet Our Team
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 mb-12 text-center">
+            Our dedicated team drives innovation in sustainable agriculture.
+          </p>
+          <TeamGrid teamMembers={teamMembers} />
         </section>
-
-        <section className="py-20 bg-gray-50">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-gray-800">Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-10">
-            {staticContent.teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 shadow-lg rounded-lg text-center transition-transform duration-300 hover:scale-105 animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={member.image}
-                    alt={`${member.name}, ${member.role}`}
-                    width={112}
-                    height={112}
-                    className="w-28 h-28 object-cover rounded-full mb-4 border-4 border-green-500 mx-auto"
-                  />
-                </Link>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800">{member.name}</h3>
-                <p className="text-gray-600 text-base sm:text-lg">{member.role}</p>
-                <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                  <BsLinkedin className="text-blue-600 mx-auto mt-3 hover:scale-110 transition-transform duration-300" size={28} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <TeamCarousel />
       </Container>
-      <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Meet Our Team - Agrovestors Farm Tech",
-            description: staticContent.description,
-            url: "https://agrovestors.com/meet-our-team",
-            publisher: {
-              "@type": "Organization",
-              name: "Agrovestors Farm Tech",
-              logo: { "@type": "ImageObject", url: "/images/AGROINVESTORLOGO.png" },
-            },
-            mainEntity: {
-              "@type": "Organization",
-              name: "Agrovestors Farm Tech",
-              member: staticContent.teamMembers.map((member) => ({
-                "@type": "Person",
-                name: member.name,
-                jobTitle: member.role,
-                image: member.image,
-                sameAs: member.linkedin,
-              })),
-            },
-          }),
-        }}
-      />
     </div>
   );
 }

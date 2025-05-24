@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -50,7 +48,6 @@ export default async function PressReleases() {
 
   return (
     <div className="press-releases-page bg-gray-50 min-h-screen">
-      <Navbar />
       <Container className="py-16 px-6">
         <section className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">{staticContent.title}</h1>
@@ -73,7 +70,6 @@ export default async function PressReleases() {
           </div>
         </section>
       </Container>
-      <Footer />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

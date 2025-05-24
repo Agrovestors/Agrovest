@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Metadata } from "next";
 import { client } from "@/lib/createClient";
@@ -14,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: pageData?.title || "Swine & Nutrition - Agrovestors Farm Tech",
       description: pageData?.description || "Research on swine feed and nutrition.",
       url: "https://agrovestors.com/values/research/swine",
-      images: [{ url: "/images/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+      images: [{ url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
     },
     alternates: { canonical: "https://agrovestors.com/values/research/swine" },
   };
@@ -33,7 +31,6 @@ export default async function Page() {
 
   return (
     <div className="values-research-swine-page bg-gray-50 min-h-screen">
-      <Navbar />
       <Container className="py-16 px-6">
         <section className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">{data.title}</h1>
@@ -49,7 +46,6 @@ export default async function Page() {
           <div className="prose text-gray-600 mt-8">{data.content}</div>
         </section>
       </Container>
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Metadata } from "next";
 import { client } from "@/lib/createClient";
@@ -70,7 +68,6 @@ export default async function Values() {
 
   return (
     <div className="values-page bg-gray-50 min-h-screen">
-      <Navbar />
       <Container className="py-16 px-6">
         <section className="max-w-5xl mx-auto animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Our Values & Services</h1>
@@ -92,7 +89,6 @@ export default async function Values() {
           </div>
         </section>
       </Container>
-      <Footer />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

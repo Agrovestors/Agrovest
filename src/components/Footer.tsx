@@ -28,7 +28,7 @@ const Footer = () => {
       title: "About",
       links: [
         { title: "A.F-Tech", href: "/about/af-tech" },
-        { title: "Meet Our Team", href: "/meetOurTeam" },
+        { title: "Meet Our Team", href: "/meet-our-team" },
         { title: "Vision and Mission", href: "/mission" },
         { title: "Our Legacy", href: "/about/legacy" },
         { title: "Philosophy", href: "/about/philosophy" },
