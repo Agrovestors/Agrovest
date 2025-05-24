@@ -7,11 +7,11 @@ import TeamCarousel from "@/components/TeamCarousel";
 
 export const metadata: Metadata = {
   title: "Our Mission | Agrovestors Farm Tech",
-  description: "At Agrovestors, we are committed to revolutionizing agriculture in Africa through innovative solutions that empower farmers.",
+  description: "We lead the charge in sustainable agribusiness solutions, global food security and in cost control.",
   keywords: ["Agrovestors mission", "sustainable agriculture", "African agritech"],
   openGraph: {
     title: "Our Mission - Agrovestors Farm Tech",
-    description: "At Agrovestors, we are committed to revolutionizing agriculture in Africa through innovative solutions that empower farmers.",
+    description: "We lead the charge in sustainable agribusiness solutions, global food security and in cost control.",
     url: "https://agrovestors.com/mission",
     images: [
       {
@@ -28,8 +28,9 @@ export const metadata: Metadata = {
 export default function Mission() {
   const staticContent = {
     title: "Our Mission",
-    description: "At Agrovestors, we are committed to revolutionizing agriculture in Africa through innovative solutions that empower farmers.",
-    vision: "We lead sustainable agribusiness solutions for global food security.",
+    description: "We lead the charge in sustainable agribusiness solutions, global food security and in cost control.",
+    vision: "Our vision is ambitious and borderless. We aim to be the unrivaled global leader in agro-network excellence, spearheading investment, digital mechanization, and e-commerce solutions.",
+    tagline: "Making it cheaper… making it better… making it faster!",
     heroImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/3db6a416335d3821493d2a391759cd763d2ba99c-612x408.jpg",
     teamMembers: [
       {
@@ -80,6 +81,12 @@ export default function Mission() {
             <p className="text-lg sm:text-xl lg:pr-16 leading-relaxed fade-in-left" style={{ animationDelay: "100ms" }}>
               {staticContent.description}
             </p>
+            <p
+              className="text-2xl sm:text-3xl font-extrabold mt-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent bounce-in"
+              style={{ animationDelay: "200ms" }}
+            >
+              {staticContent.tagline}
+            </p>
           </div>
         </section>
 
@@ -125,28 +132,28 @@ export default function Mission() {
         <section className="py-20 bg-gray-50">
           <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-gray-800 fade-in-left">Explore More</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade">
+            <Link href="/community" className="block bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer">
               <Image
-                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ed26f47bb030446745601a8cc99ccb50718ef713-612x413.jpg"
+                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpg"
                 alt="Agrovestors Community"
                 width={612}
-                height={413}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                height={397}
+                className="w-full h-48 object-cover rounded-lg mb-4 transition-all duration-300 hover:brightness-105"
               />
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Community</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 hover:underline">Community</h3>
               <p className="text-gray-600">Join our vibrant community to stay connected and share agritech insights.</p>
-            </div>
-            <div className="bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade" style={{ animationDelay: "150ms" }}>
+            </Link>
+            <Link href="/af-tech-center" className="block bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer" style={{ animationDelay: "150ms" }}>
               <Image
                 src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7926955c626dd37be4c0f49d268f97d7c0d72f8-612x410.jpg"
                 alt="A.F-Tech Center"
                 width={612}
                 height={410}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-48 object-cover rounded-lg mb-4 transition-all duration-300 hover:brightness-105"
               />
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">A.F-Tech Center</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 hover:underline">A.F-Tech Center</h3>
               <p className="text-gray-600">Discover our cutting-edge technology solutions for sustainable farming.</p>
-            </div>
+            </Link>
           </div>
         </section>
       </Container>

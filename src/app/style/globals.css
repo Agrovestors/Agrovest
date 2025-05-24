@@ -5,15 +5,15 @@
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-30px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 .fade-in-left {
-  animation: fadeInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeInLeft 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -23,33 +23,33 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
   50% {
-    transform: scale(1.03);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 12px 18px -4px rgba(0, 0, 0, 0.25);
   }
 }
 .pulse-hover:hover {
-  animation: pulse 0.6s ease-in-out;
+  animation: pulse 0.8s ease-out;
 }
 
 @keyframes staggeredFade {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) rotate(-2deg);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(0);
   }
 }
 .staggered-fade {
-  animation: staggeredFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: staggeredFade 0.8s cubic-bezier(0.33, 0, 0, 1) forwards;
   will-change: transform, opacity;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -57,5 +57,24 @@
   }
 }
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bounce-in {
+  animation: bounceIn 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
+  will-change: transform, opacity;
 }
