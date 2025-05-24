@@ -7,46 +7,142 @@ export async function generateMetadata(): Promise<Metadata> {
   const philosophy = await client.fetch(`*[_type == "about" && slug.current == "philosophy"][0]{title, description}`);
   return {
     title: philosophy?.title || "Our Philosophy | Agrovestors Farm Tech",
-    description: philosophy?.description || "Discover the philosophy driving Agrovestors Farm Tech’s mission.",
+    description: philosophy?.description || "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
     openGraph: {
       title: philosophy?.title || "Our Philosophy - Agrovestors Farm Tech",
-      description: philosophy?.description || "Discover the philosophy driving Agrovestors Farm Tech’s mission.",
+      description: philosophy?.description || "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
       url: "https://agrovestors.com/about/philosophy",
-      images: [{ url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+      images: [
+        {
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+          width: 1080,
+          height: 763,
+          alt: "Agrovestors Logo",
+        },
+      ],
     },
     alternates: { canonical: "https://agrovestors.com/about/philosophy" },
   };
 }
 
 export default async function Philosophy() {
-  const philosophy = await client.fetch(`*[_type == "about" && slug.current == "philosophy"][0]{title, description, "mainImage": mainImage.asset->url, content}`);
+  const philosophy = await client.fetch(
+    `*[_type == "about" && slug.current == "philosophy"][0]{title, description, "mainImage": mainImage.asset->url, content}`
+  );
   const fallback = {
     title: "Our Philosophy",
-    description: "Discover the philosophy driving Agrovestors Farm Tech’s mission.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+    description: "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpg",
     content: "Our philosophy is rooted in sustainability, innovation, and community empowerment.",
   };
 
   const data = philosophy || fallback;
 
+  const values = [
+    {
+      title: "Innovation",
+      description: "Innovation is a catalyst for change, a driving force behind agricultural transformation.",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b664142d398bd64801f26ada8a734fcf5a3a4d69-3840x2160.jpg",
+    },
+    {
+      title: "Sustainability",
+      description: "Sustainability is the cornerstone of operations.",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
+    },
+    {
+      title: "Collaboration",
+      description: "True progress is achieved through Collaboration.",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/f18981f2509046f3559876ebc166fefe97a72240-612x390.jpg",
+    },
+    {
+      title: "Ethical Integrity and Excellence",
+      description: "A vision without Ethical Integrity and Excellence is a waste of energy and resources.",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0c695d1b3e40801dcdac42f48d979d1223df18dc-612x344.jpg",
+    },
+    {
+      title: "Adaptability and Resilience",
+      description: "Adaptability and Resilience are essential tools that drive refined success.",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6b3d894fd7fd758af876268da283dea64dc311bc-612x408.jpg",
+    },
+    {
+      title: "Visioned Leadership",
+      description: "With all these, a Visioned Leadership is POSSIBLE!",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/49afe0f77b6ffa21dba5b2fdca906477730e0f09-612x422.jpg",
+    },
+  ];
+
   return (
-    <div className="philosophy-page bg-gray-50 min-h-screen">
+    <div className="philosophy-page bg-gradient-to-b from-gray-900 to-green-900 min-h-screen">
       <Container className="py-16 px-6">
-        <section className="max-w-4xl mx-auto animate-fade-in-up">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">{data.title}</h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8">{data.description}</p>
+        <section className="max-w-5xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 fade-in-left">{data.title}</h1>
+          <p className="text-lg sm:text-xl text-gray-200 mb-6 fade-in-left" style={{ animationDelay: "100ms" }}>
+            {data.description}
+          </p>
+          <p
+            className="text-2xl sm:text-3xl font-extrabold mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent bounce-in"
+            style={{ animationDelay: "200ms" }}
+          >
+            “When we invest in the future and cultivate innovation, we harvest prosperity.”
+          </p>
           <Image
-            src={data.mainImage}
-            alt={data.title}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-md"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpg"
+            alt="Philosophy Quote"
+            width={612}
+            height={408}
+            className="w-full h-[400px] object-cover rounded-lg shadow-md mb-8 transition-transform duration-300 hover:scale-105 pulse-hover"
             priority
           />
-          <div className="prose text-gray-600 mt-8">{data.content}</div>
+          <p className="text-lg sm:text-xl text-gray-200 mb-8 fade-in-left" style={{ animationDelay: "300ms" }}>
+            We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices, fostering an ecosystem that benefits not only the present generation but also those to come.
+          </p>
+        </section>
+
+        <section className="max-w-5xl mx-auto py-12">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-8 fade-in-left">Our Core Values</h2>
+          <div className="space-y-8 sm:space-y-12">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg fade-in-left"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <Image
+                  src={value.image}
+                  alt={value.title}
+                  width={800}
+                  height={
+                    value.image.includes("b664142") ? 450 : // 3840x2160, ~1.78:1
+                    value.image.includes("f18981f") ? 406 : // 612x390, ~1.57:1
+                    value.image.includes("0c695d1") ? 358 : // 612x344, ~1.78:1
+                    value.image.includes("49afe0f") ? 439 : // 612x422, ~1.45:1
+                    425 // 612x408, ~1.5:1
+                  }
+                  className="w-full h-[300px] sm:h-[450px] object-contain rounded-lg mb-0 sm:mb-6 transition-transform duration-300 hover:scale-105 pulse-hover"
+                />
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{value.title}</h3>
+                <p className="text-gray-200">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-5xl mx-auto py-12">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-8 fade-in-left">Our Cultural Value</h2>
+          <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <Image
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deb21cf37fbda2bcaa6094856b123ec009ff7f29-612x408.jpg"
+              alt="Our Cultural Value"
+              width={800}
+              height={408}
+              className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg shadow-md mb-0 sm:mb-6 transition-transform duration-300 hover:scale-105 pulse-hover"
+            />
+            <p className="text-lg sm:text-xl text-gray-200 fade-in-left" style={{ animationDelay: "100ms" }}>
+              Our culture is built on a commitment to sustainability, innovation, and community empowerment, driving us to create a lasting impact in agriculture.
+            </p>
+          </div>
         </section>
       </Container>
-
     </div>
   );
 }

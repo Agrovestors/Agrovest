@@ -2,8 +2,6 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { BsLinkedin } from "react-icons/bs";
-import TeamCarousel from "@/components/TeamCarousel";
 
 export const metadata: Metadata = {
   title: "Our Mission | Agrovestors Farm Tech",
@@ -32,40 +30,6 @@ export default function Mission() {
     vision: "Our vision is ambitious and borderless. We aim to be the unrivaled global leader in agro-network excellence, spearheading investment, digital mechanization, and e-commerce solutions.",
     tagline: "Making it cheaper… making it better… making it faster!",
     heroImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/3db6a416335d3821493d2a391759cd763d2ba99c-612x408.jpg",
-    teamMembers: [
-      {
-        name: "Stephen T. Onyewuenyi",
-        role: "CEO",
-        image: "/images/12718aec-f22f-4338-b924-4014d4aeee33.jpeg",
-        linkedin: "#",
-        quote: "Passionate about transforming agriculture!",
-        bio: "Stephen leads Agrovest with a vision to revolutionize farming through technology and sustainable practices.",
-      },
-      {
-        name: "Joseph Ogakwu Enare",
-        role: "Head of IT Team",
-        image: "/images/97410053-9bf0-42ba-bd35-4aa783147a3a.jpeg",
-        linkedin: "#",
-      },
-      {
-        name: "Godwin Adakonye John",
-        role: "Fullstack Developer",
-        image: "/images/b292af73-c646-43c5-9838-e84f8683b268.jpeg",
-        linkedin: "#",
-      },
-      {
-        name: "Augustine C. Ibechukwu",
-        role: "Head of Media Team",
-        image: "/images/ellen-chege-tea-farm.jpeg",
-        linkedin: "#",
-      },
-      {
-        name: "Dr Akaebubechukwu James-Unueze",
-        role: "Project Manager",
-        image: "/images/landscaping-mistakes.jpeg",
-        linkedin: "#",
-      },
-    ],
     videos: [
       { title: "Mission Video 1", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
       { title: "Mission Video 2", url: "https://www.youtube.com/embed/qC0vDKVPCrw" },
@@ -73,7 +37,7 @@ export default function Mission() {
   };
 
   return (
-    <div className="mission-page bg-gray-50 min-h-screen">
+    <div className="mission-page bg-gradient-to-b from-gray-900 to-green-900 min-h-screen">
       <Container className="pt-16">
         <section className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-[#022c22] to-[#065f46] text-white rounded-lg p-10 mb-12">
           <div className="w-full lg:max-w-[500px] text-center lg:text-left">
@@ -114,25 +78,28 @@ export default function Mission() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 text-gray-800 fade-in-left">Why We Do It</h2>
-          <div className="max-w-3xl mx-auto space-y-6 text-gray-600 text-lg leading-relaxed">
+        <section className="py-20">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 text-white fade-in-left">Why We Do It</h2>
+          <div className="max-w-3xl mx-auto space-y-6 text-gray-200 text-lg leading-relaxed">
             <p className="fade-in-left" style={{ animationDelay: "100ms" }}>
               We believe in transforming agriculture through collaboration and technology.
             </p>
             <p className="fade-in-left" style={{ animationDelay: "200ms" }}>
               Agrovestors bridges traditional farming with modern solutions.
             </p>
-            <p className="font-medium text-gray-800 fade-in-left" style={{ animationDelay: "300ms" }}>
+            <p className="font-medium text-white fade-in-left" style={{ animationDelay: "300ms" }}>
               Join us to impact the agricultural economy.
             </p>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-gray-800 fade-in-left">Explore More</h2>
+        <section className="py-20">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-white fade-in-left">Explore More</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Link href="/community" className="block bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer">
+            <Link
+              href="/community"
+              className="block bg-gray-800 p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer"
+            >
               <Image
                 src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpg"
                 alt="Agrovestors Community"
@@ -140,10 +107,14 @@ export default function Mission() {
                 height={397}
                 className="w-full h-48 object-cover rounded-lg mb-4 transition-all duration-300 hover:brightness-105"
               />
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 hover:underline">Community</h3>
-              <p className="text-gray-600">Join our vibrant community to stay connected and share agritech insights.</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 hover:underline">Community</h3>
+              <p className="text-gray-200">Join our vibrant community to stay connected and share agritech insights.</p>
             </Link>
-            <Link href="/af-tech-center" className="block bg-white p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer" style={{ animationDelay: "150ms" }}>
+            <Link
+              href="/af-tech-center"
+              className="block bg-gray-800 p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer"
+              style={{ animationDelay: "150ms" }}
+            >
               <Image
                 src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7926955c626dd37be4c0f49d268f97d7c0d72f8-612x410.jpg"
                 alt="A.F-Tech Center"
@@ -151,9 +122,31 @@ export default function Mission() {
                 height={410}
                 className="w-full h-48 object-cover rounded-lg mb-4 transition-all duration-300 hover:brightness-105"
               />
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 hover:underline">A.F-Tech Center</h3>
-              <p className="text-gray-600">Discover our cutting-edge technology solutions for sustainable farming.</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 hover:underline">A.F-Tech Center</h3>
+              <p className="text-gray-200">Discover our cutting-edge technology solutions for sustainable farming.</p>
             </Link>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-white fade-in-left">Our Vision in Action</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {staticContent.videos.map((video, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 p-6 rounded-lg shadow-lg fade-in-left"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <iframe
+                  src={video.url}
+                  title={video.title}
+                  className="w-full h-48 rounded-lg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                <h3 className="text-xl font-bold mt-4 text-white">{video.title}</h3>
+              </div>
+            ))}
           </div>
         </section>
       </Container>
@@ -177,13 +170,6 @@ export default function Mission() {
             mainEntity: {
               "@type": "Organization",
               name: "Agrovestors Farm Tech",
-              member: staticContent.teamMembers.map((member) => ({
-                "@type": "Person",
-                name: member.name,
-                jobTitle: member.role,
-                image: member.image,
-                sameAs: member.linkedin,
-              })),
             },
           }),
         }}
