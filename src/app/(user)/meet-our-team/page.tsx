@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/images/mlakfsrt/production/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png", // Placeholder; replace with correct URL
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7599fd8862c3abdfd53286ef27184d070051a812-962x1604.png", // Placeholder; replace with correct URL
     quote: "Enthusiastic about coding for change!",
     speech:
       "Godwin builds robust applications to support Agrovest’s mission of agricultural innovation.",

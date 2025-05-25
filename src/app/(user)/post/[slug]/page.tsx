@@ -1,116 +1,48 @@
-import { groq } from "next-sanity";
-import { Post } from "../../../../../types";
-import { client, urlFor } from "@/lib/createClient";
-import Container from "@/components/Container";
-import Image from "next/image";
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
-import Link from "next/link";
+import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
-import { RichText } from "@/components/RichText";
 
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+export default function PostPage({ params }: { params: { slug: string } }) {
+  const posts = [
+    {
+      _id: "post-1",
+      title: "Advancing Sustainable Agriculture in Nigeria",
+      description: "How Agrovestors is transforming farming with technology.",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg",
+      slug: { current: "sustainable-agriculture-nigeria" },
+      body: [
+        {
+          _type: "block",
+          children: [{ _type: "span", text: "Agrovestors is revolutionizing farming in Nigeria." }],
+        },
+      ],
+    },
+    {
+      _id: "post-2",
+      title: "IntelliFeed360: The Future of Feed Management",
+      description: "Our AI platform optimizes livestock feed efficiency.",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
+      slug: { current: "intellifeed360-future" },
+      body: [
+        {
+          _type: "block",
+          children: [{ _type: "span", text: "IntelliFeed360 uses AI to improve feed efficiency." }],
+        },
+      ],
+    },
+  ];
 
-export const revalidate = 30;
+  const post = posts.find((p) => p.slug.current === params.slug);
 
-export const generateStaticParams = async () => {
-  const query = groq`*[_type == 'post']{
-        slug
-    }`;
-  const slugs: Post[] = await client.fetch(query);
-  const slugRoutes = slugs.map((slug) => slug?.slug?.current);
-  return slugRoutes?.map((slug) => ({
-    slug,
-  }));
-};
-
-const SlugPage = async ({ params: { slug } }: Props) => {
-  const query = groq`*[_type == 'post' && slug.current == $slug][0]{
-        ...,
-        body,
-        author->
-    }`;
-  const post: Post = await client.fetch(query, { slug });
+  if (!post) {
+    notFound();
+  }
 
   return (
-    <Container className="mb-10">
-      <div className="flex items-center mb-10">
-        <div className="w-full md:w-2/3">
-          <Image
-            src={urlFor(post?.mainImage).url()}
-            width={500}
-            height={500}
-            alt="main image"
-            className="object-cover w-full"
-          />
-        </div>
-        <div className="w-1/3 hidden md:inline-flex flex-col items-center gap-5 px-4">
-          <Image
-            src={urlFor(post?.author?.image).url()}
-            width={200}
-            height={200}
-            alt="author image"
-            className="w-32 h-32 rounded-full object-cover"
-          />
-          <p className="text-3xl text-[#5442ae] font-semibold">
-            {post?.author?.name}
-          </p>
-          <p className="text-center tracking-wide text-sm">
-            {post?.author?.description}
-          </p>
-          <div className="flex items-center gap-3">
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-red-600 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaYoutube />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-gray-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-[#3e5b98] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-[#bc1888] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaInstagram />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-blue-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaLinkedin />
-            </Link>
-          </div>
-        </div>
+    <div className="bg-gradient-to-b from-gray-900 to-green-900 min-h-screen py-16 px-6">
+      <h1 className="text-4xl font-bold text-white mb-4 fade-in-left">{post.title}</h1>
+      <div className="text-gray-200 prose prose-invert">
+        <PortableText value={post.body} />
       </div>
-      <div>
-        <PortableText value={post?.body} components={RichText} />
-      </div>
-    </Container>
+    </div>
   );
-};
-
-export default SlugPage;
+}

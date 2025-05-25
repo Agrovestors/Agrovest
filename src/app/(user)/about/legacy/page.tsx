@@ -2,16 +2,18 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { client } from "@/lib/createClient";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const legacy = await client.fetch(`*[_type == "about" && slug.current == "legacy"][0]{title, description}`);
+  const legacy = {
+    title: "Our Legacy",
+    description: "We envision a legacy that stands the test of time—a legacy rooted in innovation, technology, collaboration, and sustainable growth.",
+  };
   return {
-    title: legacy?.title || "Our Legacy | Agrovestors Farm Tech",
-    description: legacy?.description || "We envision a legacy that stands the test of time—a legacy rooted in innovation, technology, collaboration, and sustainable growth.",
+    title: legacy.title,
+    description: legacy.description,
     openGraph: {
-      title: legacy?.title || "Our Legacy - Agrovestors Farm Tech",
-      description: legacy?.description || "We envision a legacy that stands the test of time—a legacy rooted in innovation, technology, collaboration, and sustainable growth.",
+      title: legacy.title,
+      description: legacy.description,
       url: "https://agrovestors.com/about/legacy",
       images: [
         {
@@ -26,23 +28,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Legacy() {
-  const legacy = await client.fetch(
-    `*[_type == "about" && slug.current == "legacy"][0]{
-      title,
-      description,
-      "mainImage": mainImage.asset->url,
-      content
-    }`
-  );
-  const fallback = {
+export default function Legacy() {
+  const legacy = {
     title: "Our Legacy",
     description: "We envision a legacy that stands the test of time—a legacy rooted in innovation, technology, collaboration, and sustainable growth.",
     mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/5ffd6b019f945fb3a621e2af1be028b9309038c5-612x408.jpg",
     content: "Our legacy is built on innovation, sustainability, and collaboration in transforming African agriculture.",
   };
 
-  const data = legacy || fallback;
+  const data = legacy;
 
   const sections = [
     {

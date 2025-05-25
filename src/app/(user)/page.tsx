@@ -1,71 +1,46 @@
-import BlogContent from "@/components/BlogContent";
 import Hero from "@/components/Hero";
 import TeamCarousel from "@/components/TeamCarousel";
-import { client } from "@/lib/createClient";
-import { groq } from "next-sanity";
-import { Metadata } from "next";
 
-export const revalidate = 30;
-
-const query = groq`*[_type == 'post']{
-  ...,
-  author->,
-  categories[]->,
-  "mainImage": mainImage.asset->url,
-  publishedAt,
-  slug
-} | order(_createdAt desc)`;
-
-export async function generateMetadata(): Promise<Metadata> {
-  const posts = await client.fetch(query);
-  const latestPost = posts[0] || {};
-
-  return {
-    title: "Agrovestors Farm Tech",
-    description:
-      latestPost?.title
-        ? `Explore the latest in sustainable agriculture: ${latestPost.title}`
-        : "Discover innovative farming solutions with Agrovestors Farm Tech.",
-    openGraph: {
-      title: "Agrovestors Farm Tech - Latest in Agriculture",
-      description:
-        latestPost?.title
-          ? `Read our latest post: ${latestPost.title}`
-          : "Sustainable agriculture and farm technology insights.",
-      url: "https://agrovestors.com",
-      images: latestPost?.mainImage
-        ? [
-            {
-              url: latestPost.mainImage,
-              width: 1200,
-              height: 630,
-              alt: latestPost.title || "Agrovestors Farm Tech",
-            },
-          ]
-        : [{ url: "/AGROINVESTORLOGO.png", width: 1080, height: 763, alt: "Agrovestors Logo" }],
+export default function Home() {
+  const posts = [
+    {
+      _id: "post-1",
+      _type: "post",
+      _createdAt: "2025-05-01T12:00:00Z",
+      _updatedAt: "2025-05-01T12:00:00Z",
+      _rev: "rev-1",
+      title: "Advancing Sustainable Agriculture in Nigeria",
+      description: "How Agrovestors is transforming farming with technology.",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg",
+      publishedAt: "2025-05-01T12:00:00Z",
+      slug: { current: "sustainable-agriculture-nigeria", _type: "slug" },
+      author: { name: "Agrovestors Team", _type: "author" },
+      body: [],
+      categories: [{ title: "Sustainability", _id: "cat-1", _type: "category" }],
     },
-    alternates: {
-      canonical: "https://agrovestors.com",
+    {
+      _id: "post-2",
+      _type: "post",
+      _createdAt: "2025-04-15T12:00:00Z",
+      _updatedAt: "2025-04-15T12:00:00Z",
+      _rev: "rev-2",
+      title: "IntelliFeed360: The Future of Feed Management",
+      description: "Our AI platform optimizes livestock feed efficiency.",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
+      publishedAt: "2025-04-15T12:00:00Z",
+      slug: { current: "intellifeed360-future", _type: "slug" },
+      author: { name: "Agrovestors Team", _type: "author" },
+      body: [],
+      categories: [{ title: "Technology", _id: "cat-2", _type: "category" }],
     },
-  };
-}
-
-export default async function Home() {
-  const posts = await client.fetch(query);
+  ];
 
   return (
-    <main>
+    <main className="bg-gradient-to-b from-gray-900 to-green-900 min-h-screen">
       <Hero />
-      <section aria-labelledby="blog-heading">
-        <h2 id="blog-heading" className="sr-only">
-          Latest Blog Posts
-        </h2>
-        <BlogContent posts={posts} />
-      </section>
-      <section aria-labelledby="team-heading">
-        <h2 id="team-heading" className="sr-only">
-          Our Team
-        </h2>
+
+      <section className="py-16 px-6" aria-labelledby="team-heading">
+
         <TeamCarousel />
       </section>
       <script
@@ -76,17 +51,17 @@ export default async function Home() {
             "@type": "Blog",
             name: "Agrovestors Farm Tech Blog",
             url: "https://agrovestors.com",
-            blogPost: posts.map((post: any) => ({
+            blogPost: posts.map((post) => ({
               "@type": "BlogPosting",
               headline: post.title,
               datePublished: post.publishedAt,
               author: {
                 "@type": "Person",
-                name: post.author?.name,
+                name: post.author.name,
               },
               image: post.mainImage,
-              url: `https://agrovestors.com/post/${post.slug?.current}`,
-              description: post.description || post.title,
+              url: `https://agrovestors.com/post/${post.slug.current}`,
+              description: post.description,
             })),
           }),
         }}

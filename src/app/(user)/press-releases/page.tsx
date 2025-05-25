@@ -2,7 +2,6 @@ import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { client } from "@/lib/createClient";
 
 export async function generateMetadata(): Promise<Metadata> {
   const media = {
@@ -36,7 +35,8 @@ const query = `*[_type == "media" && slug == "press-releases"]{
 }[0]`;
 
 export default async function PressReleases() {
-  // Placeholder image (replace with Sanity fetch when schema is set up)
+  // Placeholder data (replace with Sanity fetch when schema is set up)
+  // const media = await client.fetch(query);
   const media = {
     mainImage: { asset: { url: "/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpg" } },
   };
@@ -65,7 +65,11 @@ export default async function PressReleases() {
           <div className="prose text-gray-600">
             <p>{staticContent.content}</p>
             <p>
-              For media inquiries, please <Link href="/contact" className="text-green-600 hover:underline">contact us</Link>.
+              For media inquiries, please{" "}
+              <Link href="/contact" className="text-green-600 hover:underline">
+                contact us
+              </Link>
+              .
             </p>
           </div>
         </section>
@@ -90,13 +94,6 @@ export default async function PressReleases() {
           }),
         }}
       />
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
-      `}</style>
     </div>
   );
 }

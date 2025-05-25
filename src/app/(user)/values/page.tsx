@@ -1,7 +1,6 @@
 import Container from "@/components/Container";
 import Link from "next/link";
 import { Metadata } from "next";
-import { client } from "@/lib/createClient";
 
 export const metadata: Metadata = {
   title: "Our Values & Services | Agrovestors Farm Tech",
@@ -69,24 +68,12 @@ export default async function Values() {
   return (
     <div className="values-page bg-gray-50 min-h-screen">
       <Container className="py-16 px-6">
-        <section className="max-w-5xl mx-auto animate-fade-in-up">
+        <section className="max-w-5xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Our Values & Services</h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
             At Agrovestors, we deliver innovative solutions to empower farmers and promote sustainability.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Link
-                key={index}
-                href={`/values/${service.slug}`}
-                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-                aria-label={service.title}
-              >
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h2>
-                <p className="text-gray-600">{service.description}</p>
-              </Link>
-            ))}
-          </div>
+  
         </section>
       </Container>
       <script
@@ -115,13 +102,6 @@ export default async function Values() {
           }),
         }}
       />
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
-      `}</style>
     </div>
   );
 }

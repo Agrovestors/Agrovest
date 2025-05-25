@@ -34,10 +34,10 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7599fd8862c3abdfd53286ef27184d070051a812-962x1604.png",
     quote: "Enthusiastic about coding for change!",
     speech:
-      "Godwin builds robust applications to support Agrovest’s mission of agricultural innovation.",
+      "As a Fullstack Developer at Agrovestors, I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
   },
   {
     name: "Augustine C. Ibechukwu",

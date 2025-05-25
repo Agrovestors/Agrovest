@@ -1,16 +1,18 @@
 import Container from "@/components/Container";
 import Image from "next/image";
 import { Metadata } from "next";
-import { client } from "@/lib/createClient";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const philosophy = await client.fetch(`*[_type == "about" && slug.current == "philosophy"][0]{title, description}`);
+  const philosophy = {
+    title: "Our Philosophy",
+    description: "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
+  };
   return {
-    title: philosophy?.title || "Our Philosophy | Agrovestors Farm Tech",
-    description: philosophy?.description || "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
+    title: philosophy.title,
+    description: philosophy.description,
     openGraph: {
-      title: philosophy?.title || "Our Philosophy - Agrovestors Farm Tech",
-      description: philosophy?.description || "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
+      title: philosophy.title,
+      description: philosophy.description,
       url: "https://agrovestors.com/about/philosophy",
       images: [
         {
@@ -25,18 +27,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Philosophy() {
-  const philosophy = await client.fetch(
-    `*[_type == "about" && slug.current == "philosophy"][0]{title, description, "mainImage": mainImage.asset->url, content}`
-  );
-  const fallback = {
+export default function Philosophy() {
+  const philosophy = {
     title: "Our Philosophy",
     description: "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
     mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpg",
     content: "Our philosophy is rooted in sustainability, innovation, and community empowerment.",
   };
 
-  const data = philosophy || fallback;
+  const data = philosophy;
 
   const values = [
     {
@@ -112,11 +111,11 @@ export default async function Philosophy() {
                   alt={value.title}
                   width={800}
                   height={
-                    value.image.includes("b664142") ? 450 : // 3840x2160, ~1.78:1
-                    value.image.includes("f18981f") ? 406 : // 612x390, ~1.57:1
-                    value.image.includes("0c695d1") ? 358 : // 612x344, ~1.78:1
-                    value.image.includes("49afe0f") ? 439 : // 612x422, ~1.45:1
-                    425 // 612x408, ~1.5:1
+                    value.image.includes("b664142") ? 450 :
+                    value.image.includes("f18981f") ? 406 :
+                    value.image.includes("0c695d1") ? 358 :
+                    value.image.includes("49afe0f") ? 439 :
+                    425
                   }
                   className="w-full h-[300px] sm:h-[450px] object-contain rounded-lg mb-0 sm:mb-6 transition-transform duration-300 hover:scale-105 pulse-hover"
                 />
