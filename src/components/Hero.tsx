@@ -123,7 +123,7 @@ const Hero = () => {
         {/* New Image Section */}
         <div className="mt-8 w-full">
           <Image
-            src="/gallery/fsm.png"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cb1caf99a068ab9b027bbf3185d6c2890b2e0e39-2560x1346.png"
             alt="agriculture showcase"
             width={1200}
             height={200}

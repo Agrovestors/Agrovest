@@ -19,16 +19,16 @@ const teamMembers: TeamMember[] = [
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
     speech:
-      "Stephen leads Agrovest with a vision to revolutionize farming through technology and sustainable practices.",
+      "The future of Agrovestors Farm-Tech is rooted in transformative innovation, collaborative partnerships, and tech-driven agribusiness. We envision a self-sustaining agricultural ecosystem that bridges the gap between research, practical farming, and intelligent technology—unlocking unprecedented value for farmers, students, investors, and the entire food value chain. With our three-core pillars—Research & Production, Smart Agro-Management Systems, and Media—we are not just solving problems, we are redefining African agriculture.",
   },
   {
-    name: "Joseph Ogakwu Enare",
+    name: "Joseph Enare Ogakwu",
     role: "Head of IT Team",
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/fb5600b633c9385b136b11774edfe18c60a1ea14-4096x2731.png",
     quote: "Innovating for a sustainable future.",
     speech:
-      "Joseph drives the development of cutting-edge IT solutions to empower farmers.",
+      "I'm optimistic about the future of Agriculture in Nigeria and Africa beyond. At Agrovestors, the impossible becomes possible.",
   },
   {
     name: "Godwin Adakonye John",
@@ -46,7 +46,7 @@ const teamMembers: TeamMember[] = [
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
     quote: "Enthusiastic about transforming agriculture!",
     speech:
-      "Augustine crafts compelling stories to promote Agrovest’s impact in the agricultural sector.",
+      "The visibility and engagement surrounding innovations in sustainable agriculture is communicated through strategic storytelling and stakeholder-focused content. That is our goal: Building trust, inspiring collaboration, and positioning Agrovestors as a leader in Africa’s agricultural transformation.",
   },
   {
     name: "Dr Akaebubechukwu James-Unueze",
