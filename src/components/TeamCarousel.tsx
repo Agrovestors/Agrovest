@@ -34,10 +34,10 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7599fd8862c3abdfd53286ef27184d070051a812-962x1604.png",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/026057a75a851bbbf56f7ff92d19d801ade81ea6-1913x2429.png",
     quote: "Enthusiastic about coding for change!",
     speech:
-      "As a Fullstack Developer at Agrovestors, I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
+      "I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
   },
   {
     name: "Augustine C. Ibechukwu",
@@ -70,14 +70,21 @@ const preloadImages = teamMembers.map((member: TeamMember) => (
 
 export default function TeamCarousel() {
   const [currentMemberIndex, setCurrentMemberIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setCurrentMemberIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
     }, 8000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
+
+  const togglePause = () => {
+    setIsPaused((prev) => !prev);
+  };
 
   const currentMember = teamMembers[currentMemberIndex];
 
@@ -98,9 +105,42 @@ export default function TeamCarousel() {
         .animate-slide-in-fade {
           animation: slideInFade 0.8s ease-in-out;
         }
+        .control-button {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .control-button:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        .control-button span {
+          font-size: 1.5rem;
+        }
+        .tooltip {
+          position: absolute;
+          bottom: 100%;
+          margin-bottom: 8px;
+          background: #1a202c;
+          color: white;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s ease, visibility 0.2s ease;
+          z-index: 10;
+        }
+        .control-button:hover .tooltip {
+          opacity: 1;
+          visibility: visible;
+        }
       `}</style>
       <div className="team-section py-12 px-4 sm:px-6 lg:px-20 xl:px-40">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10 text-white">
           What Our Team Has To Say
         </h2>
         <div className="flex justify-center">
@@ -142,17 +182,29 @@ export default function TeamCarousel() {
                 (prev) => (prev - 1 + teamMembers.length) % teamMembers.length
               )
             }
-            className="mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-200 rounded hover:bg-gray-300 text-sm sm:text-base"
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            aria-label="Previous team member"
           >
-            Previous
+            <span>⏮</span>
+            <div className="tooltip">Previous</div>
+          </button>
+          <button
+            onClick={togglePause}
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+          >
+            <span>{isPaused ? "▶" : "⏸"}</span>
+            <div className="tooltip">{isPaused ? "Play" : "Pause"}</div>
           </button>
           <button
             onClick={() =>
               setCurrentMemberIndex((prev) => (prev + 1) % teamMembers.length)
             }
-            className="mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-200 rounded hover:bg-gray-300 text-sm sm:text-base"
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            aria-label="Next team member"
           >
-            Next
+            <span>⏭</span>
+            <div className="tooltip">Next</div>
           </button>
         </div>
       </div>
