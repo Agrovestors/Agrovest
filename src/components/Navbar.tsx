@@ -331,11 +331,11 @@ const Navbar = () => {
           width={48}
           height={48}
           priority
-          quality={80}
+          quality={100}
           className="transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6"
         />
         <span className="text-white text-xl font-bold ml-3 group-hover:text-green-400 transition-colors duration-300">
-          Agrovestors Farm Tech
+          Agrovestors Farm-Tech
         </span>
       </Link>
 

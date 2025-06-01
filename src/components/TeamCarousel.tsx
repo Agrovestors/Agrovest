@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
     speech:
-      "The future of Agrovestors Farm-Tech is rooted in transformative innovation, collaborative partnerships, and tech-driven agribusiness. We envision a self-sustaining agricultural ecosystem that bridges the gap between research, practical farming, and intelligent technology—unlocking unprecedented value for farmers, students, investors, and the entire food value chain. With our three-core pillars—Research & Production, Smart Agro-Management Systems, and Media—we are not just solving problems, we are redefining African agriculture.",
+      "The future of Agrovestors Farm-Tech is rooted in transformative innovation, collaborative partnerships, and tech-driven agribusiness. We envision a self-sustaining agricultural ecosystem that bridges the gap between research, practical farming, and intelligent technology, unlocking unprecedented value for farmers, students, investors, and the entire food value chain. With our three-core pillars, which are Research & Production, Smart Agro-Management Systems, and Media. We are not just solving problems, we are redefining African agriculture.",
   },
   {
     name: "Joseph Enare Ogakwu",
