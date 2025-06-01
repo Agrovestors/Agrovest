@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     name: "Joseph Enare Ogakwu",
     role: "Head of IT Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/fb5600b633c9385b136b11774edfe18c60a1ea14-4096x2731.png",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.png",
     quote: "Innovating for a sustainable future.",
     speech:
       "I'm optimistic about the future of Agriculture in Nigeria and Africa beyond. At Agrovestors, the impossible becomes possible.",
@@ -114,7 +114,7 @@ export default function TeamCarousel() {
         }
         .control-button:hover {
           transform: scale(1.1);
-          box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+          box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
         }
         .control-button span {
           font-size: 1.5rem;
@@ -139,37 +139,38 @@ export default function TeamCarousel() {
           visibility: visible;
         }
       `}</style>
-      <div className="team-section py-12 px-4 sm:px-6 lg:px-20 xl:px-40">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10 text-white">
+      <div className="team-section py-12 px-4 sm:px-6 lg:px-20 xl:px-40 bg-gradient-to-b from-gray-900 to-green-900">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10 text-white fade-in-left">
           What Our Team Has To Say
         </h2>
         <div className="flex justify-center">
           <div
             key={currentMember.name}
-            className="w-full min-w-[300px] max-w-[90%] sm:max-w-3xl lg:max-w-4xl bg-white p-4 sm:p-8 lg:p-12 shadow-lg rounded-lg flex flex-col sm:flex-row items-center mx-2 sm:mx-4 animate-slide-in-fade"
+            className="w-full max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] h-[500px] sm:h-[450px] lg:h-[400px] bg-gray-800 p-3 sm:p-4 lg:p-6 shadow-lg rounded-lg flex flex-col sm:flex-row items-start mx-2 sm:mx-3 lg:mx-4 animate-slide-in-fade overflow-hidden"
           >
-            <Image
-              src={currentMember.imgSrc}
-              alt={currentMember.name}
-              width={360}
-              height={360}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 40vw, 360px"
-              className="object-cover object-center mb-4 sm:mb-0 sm:mr-8 w-full sm:w-1/3 max-w-[180px] sm:max-w-[280px] lg:max-w-[360px]"
-              style={{ transform: "scale(1.3)" }}
-              priority
-              quality={80}
-            />
-            <div className="flex-1 pt-4 sm:pt-0 sm:pl-4">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+            <div className="w-full sm:w-2/5 h-48 sm:h-64 lg:h-80 mb-4 sm:mb-0 sm:mr-4 relative rounded-lg overflow-hidden">
+              <Image
+                src={currentMember.imgSrc}
+                alt={currentMember.name}
+                width={360}
+                height={360}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 360px"
+                className="w-full h-full object-contain max-w-full transition-transform duration-300 pulse-hover"
+                priority
+                quality={75}
+              />
+            </div>
+            <div className="w-full sm:w-3/5 flex-1 pt-2 sm:pt-0">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white bounce-in">
                 {currentMember.name}
               </h3>
-              <p className="text-gray-600 text-base sm:text-lg mt-1">
+              <p className="text-green-400 text-sm sm:text-base mt-1">
                 {currentMember.role}
               </p>
-              <p className="text-blue-600 text-sm sm:text-base italic mt-2 break-words hyphens-auto max-h-16 overflow-y-visible">
+              <p className="text-green-400 text-sm sm:text-base italic mt-2 break-words hyphens-auto max-h-12 overflow-y-hidden">
                 {`"${currentMember.quote}"`}
               </p>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg mt-2 break-words hyphens-auto">
+              <p className="text-gray-200 text-xs sm:text-sm lg:text-base mt-2 break-words hyphens-auto italic max-h-[300px] overflow-y-auto">
                 {currentMember.speech}
               </p>
             </div>
@@ -182,7 +183,7 @@ export default function TeamCarousel() {
                 (prev) => (prev - 1 + teamMembers.length) % teamMembers.length
               )
             }
-            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base glow-hover"
             aria-label="Previous team member"
           >
             <span>⏮</span>
@@ -190,7 +191,7 @@ export default function TeamCarousel() {
           </button>
           <button
             onClick={togglePause}
-            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base glow-hover"
             aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
           >
             <span>{isPaused ? "▶" : "⏸"}</span>
@@ -200,7 +201,7 @@ export default function TeamCarousel() {
             onClick={() =>
               setCurrentMemberIndex((prev) => (prev + 1) % teamMembers.length)
             }
-            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base"
+            className="control-button mx-2 px-3 py-1 sm:px-4 sm:py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-sm sm:text-base glow-hover"
             aria-label="Next team member"
           >
             <span>⏭</span>

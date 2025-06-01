@@ -131,18 +131,21 @@
 }
 
 .team-card {
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 10px rgba(74, 222, 128, 0.3);
+  @apply bg-gradient-to-br from-white to-gray-200 rounded-2xl shadow-xl max-w-xs mx-auto p-6;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .team-card:hover {
-  transform: scale(1.05);
+  @apply scale-105 shadow-2xl;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 15px rgba(74, 222, 128, 0.5);
 }
+
 .image-container {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  margin: 0 auto 16px;
+  @apply relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 overflow-hidden rounded-full;
+  aspect-ratio: 1 / 1;
+}
+.image-container img {
+  @apply w-full h-full object-cover transition-transform duration-300 ease-in-out;
+}
+.image-container img:hover {
+  transform: scale(1.1);
 }

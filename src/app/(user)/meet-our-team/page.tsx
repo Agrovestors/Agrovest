@@ -1,13 +1,14 @@
 import Container from "@/components/Container";
+import Image from "next/image";
 import { Metadata } from "next";
-import TeamGrid from "@/components/TeamGrid";
+import { FaLinkedin } from "react-icons/fa";
 
 interface TeamMember {
   name: string;
   role: string;
   imgSrc: string;
   quote: string;
-  speech: string;
+  linkedin: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -17,17 +18,15 @@ const teamMembers: TeamMember[] = [
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
-    speech:
-      "The future of Agrovestors Farm-Tech is rooted in transformative innovation, collaborative partnerships, and tech-driven agribusiness. We envision a self-sustaining agricultural ecosystem that bridges the gap between research, practical farming, and intelligent technology—unlocking unprecedented value for farmers, students, investors, and the entire food value chain. With our three-core pillars—Research & Production, Smart Agro-Management Systems, and Media—we are not just solving problems, we are redefining African agriculture.",
+    linkedin: "https://www.linkedin.com/in/stephen-onyewuenyi-4ab524232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Joseph Enare Ogakwu",
     role: "Head of IT Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/fb5600b633c9385b136b11774edfe18c60a1ea14-4096x2731.png",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.png",
     quote: "Innovating for a sustainable future.",
-    speech:
-      "I'm optimistic about the future of Agriculture in Nigeria and Africa beyond. At Agrovestors, the impossible becomes possible.",
+    linkedin: "https://www.linkedin.com/in/joseph-ogakwu",
   },
   {
     name: "Godwin Adakonye John",
@@ -35,8 +34,7 @@ const teamMembers: TeamMember[] = [
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/026057a75a851bbbf56f7ff92d19d801ade81ea6-1913x2429.png",
     quote: "Enthusiastic about coding for change!",
-    speech:
-      "As a Fullstack Developer at Agrovestors, I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
+    linkedin: "https://www.linkedin.com/in/godwin-john-15a775287/",
   },
   {
     name: "Augustine C. Ibechukwu",
@@ -44,8 +42,7 @@ const teamMembers: TeamMember[] = [
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
     quote: "Enthusiastic about transforming agriculture!",
-    speech:
-      "The visibility and engagement surrounding innovations in sustainable agriculture is communicated through strategic storytelling and stakeholder-focused content. That is our goal: Building trust, inspiring collaboration, and positioning Agrovestors as a leader in Africa’s agricultural transformation.",
+    linkedin: "https://www.linkedin.com/in/augustine-ibechukwu-41b0ba323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Dr Akaebubechukwu James-Unueze",
@@ -53,8 +50,7 @@ const teamMembers: TeamMember[] = [
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/94297a0585bc5ad3220707d35e89347176f6398e-2807x3258.png",
     quote: "Enthusiastic about transforming agriculture!",
-    speech:
-      "Dr Akaebubechukwu ensures projects align with Agrovest’s mission for sustainable agriculture.",
+    linkedin: "https://www.linkedin.com/in/akaebubechukwu-james-uneze-807569247",
   },
 ];
 
@@ -90,7 +86,38 @@ export default function MeetOurTeam() {
           <p className="text-lg sm:text-xl text-gray-200 mb-12 text-center">
             Our dedicated team drives innovation in sustainable agriculture.
           </p>
-          <TeamGrid teamMembers={teamMembers} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member) => (
+              <div key={member.name} className="team-card">
+                <div className="image-container">
+                  <Image
+                    src={member.imgSrc}
+                    alt={member.name}
+                    width={192}
+                    height={192}
+                    quality={90}
+                    sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+                    className="object-cover w-full h-full rounded-full"
+                    priority
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-center">{member.name}</h3>
+                <p className="text-base text-gray-600 mb-2 text-center">{member.role}</p>
+                <p className="text-sm text-gray-700 italic mb-4 text-center">{member.quote}</p>
+                <div className="flex justify-center">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-500 hover:text-green-400 transition-colors duration-300"
+                    aria-label={`Visit ${member.name}'s LinkedIn profile`}
+                  >
+                    <FaLinkedin size={24} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
       </Container>
     </div>

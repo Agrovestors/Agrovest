@@ -99,8 +99,8 @@ const Navbar = () => {
               title: "Fish",
               href: "/values/production/fish",
               items: [
-                { title: "Catfish", href: "/values/production/fish/catfish" },
-                { title: "Tilapia", href: "/values/production/fish/tilapia" },
+                { title: "Catfish", href: "/values/research/fish/catfish" },
+                { title: "Tilapia", href: "/values/research/fish/tilapia" },
               ],
             },
             {
