@@ -156,9 +156,16 @@ const Navbar = () => {
     }
   };
 
-  const toggleDropdown = (title: string) => {
-    setOpenDropdown(openDropdown === title ? null : title);
-    if (openDropdown !== title) setOpenSubDropdown(null);
+  const toggleDropdown = (identifier: string) => {
+    // If the identifier matches a sub-dropdown (contains a hyphen), toggle sub-dropdown
+    if (identifier.includes('-')) {
+      setOpenSubDropdown(openSubDropdown === identifier ? null : identifier);
+    } else {
+      // Toggle top-level dropdown
+      setOpenDropdown(openDropdown === identifier ? null : identifier);
+      // Close sub-dropdown if a different top-level dropdown is opened
+      if (openDropdown !== identifier) setOpenSubDropdown(null);
+    }
   };
 
   const handleMouseEnter = (title: string, isSubDropdown: boolean = false) => {
@@ -258,7 +265,7 @@ const Navbar = () => {
           transition: background 0.4s ease;
         }
         .hamburger-open .hamburger-line:nth-child(1) {
-          animation: hamburgerToXTop 0.4s forwards cubic-bezier(0.68, -0.05, 0.32, 1.6);
+          animation: hamburgerToXTop 0.4s forwards cubic-bezier(0.68ഗ, -0.05, 0.32, 1.6);
           background: #4ade80;
         }
         .hamburger-open .hamburger-line:nth-child(2) {
@@ -364,11 +371,10 @@ const Navbar = () => {
                 onMouseLeave={() => handleMouseLeave()}
               >
                 <button
-                  className={`flex items-center py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${
-                    pathname && pathname.startsWith(item.href)
-                      ? "text-green-400 font-semibold"
-                      : ""
-                  }`}
+                  className={`flex items-center py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${pathname && pathname.startsWith(item.href)
+                    ? "text-green-400 font-semibold"
+                    : ""
+                    }`}
                   aria-haspopup="true"
                   aria-expanded={openDropdown === item.title}
                 >
@@ -376,11 +382,10 @@ const Navbar = () => {
                   <FiChevronDown className="ml-1 transform transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" />
                 </button>
                 <ul
-                  className={`absolute left-0 top-full w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top ${
-                    openDropdown === item.title
-                      ? "opacity-100 visible pointer-events-auto animate-bounce-in"
-                      : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
-                  }`}
+                  className={`absolute left-0 top-full w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top ${openDropdown === item.title
+                    ? "opacity-100 visible pointer-events-auto animate-bounce-in"
+                    : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
+                    }`}
                   role="list"
                   onMouseEnter={() => handleMouseEnter(item.title)}
                   onMouseLeave={() => handleMouseLeave()}
@@ -402,11 +407,10 @@ const Navbar = () => {
                             <FiChevronDown className="transform transition-transform duration-300 group-hover/sub:scale-125 group-hover/sub:-rotate-12" />
                           </button>
                           <ul
-                            className={`absolute left-full top-0 w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top-left ${
-                              openSubDropdown === `${item.title}-${subItem.title}`
-                                ? "opacity-100 visible pointer-events-auto animate-bounce-in"
-                                : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
-                            }`}
+                            className={`absolute left-full top-0 w-56 bg-[#022c22] text-white shadow-lg rounded-md transition-all duration-300 ease-out origin-top-left ${openSubDropdown === `${item.title}-${subItem.title}`
+                              ? "opacity-100 visible pointer-events-auto animate-bounce-in"
+                              : "opacity-0 invisible scale-95 -translate-y-2 pointer-events-none"
+                              }`}
                             role="list"
                             onMouseEnter={() => handleMouseEnter(`${item.title}-${subItem.title}`, true)}
                             onMouseLeave={() => handleMouseLeave(true)}
@@ -446,9 +450,8 @@ const Navbar = () => {
             ) : (
               <Link
                 href={item.href}
-                className={`py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${
-                  pathname === item.href ? "text-green-400 font-semibold" : ""
-                }`}
+                className={`py-2 px-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)] text-base ${pathname === item.href ? "text-green-400 font-semibold" : ""
+                  }`}
                 aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.title}
@@ -459,11 +462,10 @@ const Navbar = () => {
       </ul>
 
       <ul
-        className={`fixed top-20 left-0 w-full bg-[#022c22] p-6 flex flex-col z-40 ${
-          isOpen
-            ? "mobile-menu-enter-active"
-            : "mobile-menu-exit-active mobile-menu-exit"
-        } ${!isOpen && "hidden"}`}
+        className={`fixed top-20 left-0 w-full bg-[#022c22] p-6 flex flex-col z-40 lg:hidden ${isOpen
+          ? "mobile-menu-enter-active"
+          : "mobile-menu-exit-active mobile-menu-exit hidden"
+          }`}
         role="list"
       >
         {navigation.map((item, index) => (
@@ -482,15 +484,14 @@ const Navbar = () => {
                 >
                   {item.title}
                   <FiChevronDown
-                    className={`transform transition-transform duration-300 ${
-                      openDropdown === item.title ? "scale-125 -rotate-12" : ""
-                    }`}
+                    className={`transform transition-transform duration-300 ${openDropdown === item.title ? "scale-125 -rotate-12" : ""
+                      }`}
                   />
                 </button>
                 {openDropdown === item.title && (
-                  <ul className="pl-4" role="list">
+                  <ul className="pl-4 space-y-2" role="list">
                     {item.dropdown.map((subItem) => (
-                      <li key={subItem.title} className="border-l border-green-500/20">
+                      <li key={subItem.title} className="border-l border-green-500/20 pl-2">
                         {subItem.items ? (
                           <>
                             <button
@@ -500,26 +501,29 @@ const Navbar = () => {
                               className="w-full text-left text-white py-2 flex justify-between items-center text-sm hover:text-green-400 transition-colors duration-300"
                               aria-haspopup="true"
                               aria-expanded={
-                                openDropdown === `${item.title}-${subItem.title}`
+                                openSubDropdown === `${item.title}-${subItem.title}`
                               }
                             >
                               {subItem.title}
                               <FiChevronDown
-                                className={`transform transition-transform duration-300 ${
-                                  openDropdown === `${item.title}-${subItem.title}`
-                                    ? "scale-125 -rotate-12"
-                                    : ""
-                                }`}
+                                className={`transform transition-transform duration-300 ${openSubDropdown === `${item.title}-${subItem.title}`
+                                  ? "scale-125 -rotate-12"
+                                  : ""
+                                  }`}
                               />
                             </button>
-                            {openDropdown === `${item.title}-${subItem.title}` && (
-                              <ul className="pl-4" role="list">
+                            {openSubDropdown === `${item.title}-${subItem.title}` && (
+                              <ul className="pl-6 space-y-1" role="list">
                                 {subItem.items.map((subSubItem) => (
                                   <li key={subSubItem.title}>
                                     <Link
                                       href={subSubItem.href}
-                                      className="block text-white py-2 text-sm hover:text-green-400 transition-colors duration-300"
-                                      onClick={() => setIsOpen(false)}
+                                      className="block text-white py-1.5 text-sm hover:text-green-400 transition-colors duration-300"
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                        setOpenDropdown(null);
+                                        setOpenSubDropdown(null);
+                                      }}
                                       aria-current={
                                         pathname === subSubItem.href ? "page" : undefined
                                       }
@@ -535,7 +539,11 @@ const Navbar = () => {
                           <Link
                             href={subItem.href}
                             className="block text-white py-2 text-sm hover:text-green-400 transition-colors duration-300"
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setOpenDropdown(null);
+                              setOpenSubDropdown(null);
+                            }}
                             aria-current={pathname === subItem.href ? "page" : undefined}
                           >
                             {subItem.title}
@@ -550,7 +558,11 @@ const Navbar = () => {
               <Link
                 href={item.href}
                 className="block text-white py-3 text-base hover:text-green-400 transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setOpenDropdown(null);
+                  setOpenSubDropdown(null);
+                }}
                 aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.title}
