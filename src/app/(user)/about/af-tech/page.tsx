@@ -54,7 +54,7 @@ export default function AFTech() {
             Learn about A.F-Tech, a division of Agrovestors Farm Tech.
           </p>
           <Image
-            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1a04f689053a2786f2b16d50724e97a803f998dd-7360x4912.jpg"
             alt="A.F-Tech"
             width={800}
             height={533}
