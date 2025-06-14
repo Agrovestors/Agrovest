@@ -40,8 +40,8 @@ export default function IntelliFly360() {
           </div>
           <div className="w-full lg:w-1/2">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/399550e76fceba2a7fa29a8378c9964edd31648b-4160x6240.jpg"
-              alt="Black soldier flies"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/918869b06d74f878a136cce82b7465a63901dc95-1755x1240.jpg"
+              alt="Black soldier fly larvae in a farm setting"
               width={4160}
               height={6240}
               quality={90}
@@ -137,13 +137,25 @@ export default function IntelliFly360() {
               <p className="text-lg text-gray-200 italic mb-4">
                 “Since I started using BSF feed, my poultry feed costs dropped, and my birds look healthier.”
               </p>
-              <p className="text-green-400 font-semibold">— Grace, Farmer in Nasarawa</p>
+              <p className="text-green-400 font-semibold">— Grace, Farmer in Owerri</p>
             </div>
             <div className="bg-gray-700 p-6 rounded-lg">
               <p className="text-lg text-gray-200 italic mb-4">
                 “The frass fertilizer has boosted my tomato farm yield like never before.”
               </p>
-              <p className="text-green-400 font-semibold">— Uche, Urban Farmer in Abuja</p>
+              <p className="text-green-400 font-semibold">— Uche, Urban Farmer in Aba</p>
+            </div>
+            <div className="bg-gray-700 p-6 rounded-lg">
+              <p className="text-lg text-gray-200 italic mb-4">
+                “BSF feed cut my fish farming costs by half, and my catfish are growing faster.”
+              </p>
+              <p className="text-green-400 font-semibold">— Chidi, Fish Farmer in Enugu</p>
+            </div>
+            <div className="bg-gray-700 p-6 rounded-lg">
+              <p className="text-lg text-gray-200 italic mb-4">
+                “Using frass on my maize farm improved soil fertility and doubled my harvest.”
+              </p>
+              <p className="text-green-400 font-semibold">— Ngozi, Farmer in Imo</p>
             </div>
           </div>
         </section>
