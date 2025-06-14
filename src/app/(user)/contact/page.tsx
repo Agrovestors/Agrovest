@@ -31,12 +31,12 @@ export default function Contact() {
       "At Agrovestors Farm Tech, we are committed to helping you find the best solutions for your agricultural needs. Whether you have inquiries about our services or need further information, don’t hesitate to reach out.",
     office: {
       title: "Our Office Location",
-      address: ["Agrovestors Farm Tech Headquarters", "1234 Agro Street, Farmville, Abuja, Nigeria"],
+      address: ["Agrovestors Farm Tech Headquarters", "Umuorie Amachara Avuvu Ikeduru, Imo State, Nigeria."],
     },
     contactInfo: {
       title: "Contact Information",
-      email: "info@agrovestors.com",
-      phone: "+234 123 456 7890",
+      email: "info@agrovestorsftech.com",
+      phone: "+234 706 445 2265",
     },
   };
 
