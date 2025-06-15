@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Container from "./Container";
 import Image from "next/image";
 import Link from "next/link";
-import { BsFacebook, BsYoutube, BsInstagram, BsGithub } from "react-icons/bs";
+import { BsFacebook, BsYoutube, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ const Footer = () => {
     setError("");
     setIsSubscribed(true);
     setEmail("");
-    setTimeout(() => setIsSubscribed(false), 3000); // Reset after 3 seconds
+    setTimeout(() => setIsSubscribed(false), 3000);
   };
 
   const navigation = [
@@ -70,10 +70,21 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { Icon: BsFacebook, href: "https://facebook.com/agrovestors", label: "Facebook" },
-    { Icon: BsYoutube, href: "https://youtube.com/agrovestors", label: "YouTube" },
-    { Icon: BsInstagram, href: "https://instagram.com/agrovestors", label: "Instagram" },
-    { Icon: BsGithub, href: "https://github.com/agrovestors", label: "GitHub" },
+    {
+      Icon: BsFacebook,
+      href: "https://www.facebook.com/share/1AWG5ZVeHt/",
+      label: "Facebook",
+    },
+    {
+      Icon: BsYoutube,
+      href: "https://youtube.com/@agrovestorsfarm-tech?si=uA66iKVW1xqyB7Xo",
+      label: "YouTube",
+    },
+    {
+      Icon: BsInstagram,
+      href: "https://www.instagram.com/agrovestorsfarmtech?utm_source=qr&igsh=OHZxZ2d0bGJqb3Vn",
+      label: "Instagram",
+    },
   ];
 
   return (
@@ -94,7 +105,6 @@ const Footer = () => {
         .animate-delay-300 { animation-delay: 300ms; }
         .animate-delay-400 { animation-delay: 400ms; }
       `}</style>
-      {/* Background Leaf Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <Image
           src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.png"
@@ -106,7 +116,6 @@ const Footer = () => {
       </div>
 
       <Container className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
-        {/* Logo and About */}
         <div className="flex flex-col items-start animate-fade-in-up">
           <Link href="/" className="flex items-center group" aria-label="Agrovestors Farm Tech Home">
             <Image
@@ -141,7 +150,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Navigation Columns */}
         {navigation.slice(0, 3).map((section, index) => (
           <div key={section.title} className={`flex flex-col animate-fade-in-up animate-delay-${(index + 1) * 100}`}>
             <h3 className="text-lg font-bold text-white mb-4">{section.title}</h3>
@@ -161,7 +169,6 @@ const Footer = () => {
           </div>
         ))}
 
-        {/* Newsletter and Resources */}
         <div className="flex flex-col animate-fade-in-up animate-delay-400">
           <h3 className="text-lg font-bold text-white mb-4">Stay Connected</h3>
           <p className="text-sm text-gray-300 mb-4 max-w-xs">
@@ -205,14 +212,12 @@ const Footer = () => {
         </div>
       </Container>
 
-      {/* Footer Bottom Section */}
       <div className="w-full mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400 relative z-10">
         <p className="animate-fade-in-up">
           © {new Date().getFullYear()} Agrovestors Farm Tech. All Rights Reserved.
         </p>
       </div>
 
-      {/* Schema.org JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -220,7 +225,7 @@ const Footer = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Agrovestors Farm Tech",
-            url: "https://your-site.com",
+            url: "https://agrovestors.com",
             logo: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
             description: "Agrovestors Farm Tech provides innovative and sustainable agriculture solutions.",
             sameAs: socialLinks.map((link) => link.href),

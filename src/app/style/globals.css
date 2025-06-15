@@ -1,8 +1,68 @@
+/* Existing styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Existing animations for Coming Soon pages */
+@keyframes floatPulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUpImage {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-float-pulse:hover {
+  animation: floatPulse 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up-image {
+  animation: fadeInUpImage 1s ease-out forwards;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.95) translateY(-8px); opacity: 0; }
+  60% { transform: scale(1.05) translateY(2px); opacity: 0.9; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.bounce-in {
+  animation: bounceIn 0.3s ease-out forwards;
+}
+
 @keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+@keyframes pulseHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-hover:hover {
+  animation: pulseHover 1.5s ease-in-out infinite;
+}
+
+/* New animations from provided CSS */
+@keyframes fadeInLeftNew {
   from {
     opacity: 0;
     transform: translateX(-30px) scale(0.95);
@@ -12,8 +72,8 @@
     transform: translateX(0) scale(1);
   }
 }
-.fade-in-left {
-  animation: fadeInLeft 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
+.fade-in-left-new {
+  animation: fadeInLeftNew 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -27,7 +87,7 @@
     box-shadow: 0 12px 18px -4px rgba(0, 0, 0, 0.25);
   }
 }
-.pulse-hover:hover {
+.pulse-hover-new:hover {
   animation: pulse 0.8s ease-out;
 }
 
@@ -46,7 +106,7 @@
   will-change: transform, opacity;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUpNew {
   from {
     opacity: 0;
     transform: translateY(25px);
@@ -56,12 +116,12 @@
     transform: translateY(0);
   }
 }
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
+.animate-fade-in-up-new {
+  animation: fadeInUpNew 0.7s cubic-bezier(0.33, 0, 0, 1) forwards;
   will-change: transform, opacity;
 }
 
-@keyframes bounceIn {
+@keyframes bounceInNew {
   0% {
     opacity: 0;
     transform: scale(0.8);
@@ -74,8 +134,8 @@
     transform: scale(1);
   }
 }
-.bounce-in {
-  animation: bounceIn 0.9s cubic-bezier(0.33, 0, 0, 1) forwards;
+.bounce-in-new {
+  animation: bounceInNew 0.9s cubic-bezier(0.33, 0, 0, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -103,7 +163,7 @@
   animation: tilt 0.5s ease-in-out;
 }
 
-@keyframes floatPulse {
+@keyframes floatPulseNew {
   0% {
     transform: translate(0, 0);
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
@@ -125,8 +185,8 @@
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
   }
 }
-.float-pulse {
-  animation: floatPulse 6s ease-in-out infinite;
+.float-pulse-new {
+  animation: floatPulseNew 6s ease-in-out infinite;
   will-change: transform, box-shadow;
 }
 
