@@ -82,7 +82,7 @@ export default function Community() {
               Join our WhatsApp community and start connecting with fellow Agrovestors today.
             </p>
             <a
-              href="https://chat.whatsapp.com/INVITE_CODE"
+              href="https://whatsapp.com/channel/0029VbB7L0ND38CSUqHSJy0Q"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-green-400 font-semibold transition-transform duration-300 hover:scale-105"
