@@ -108,7 +108,7 @@ export default function IntelliFly360() {
           </ul>
           <div className="flex flex-col items-center space-y-4">
             <a
-              href="https://chat.whatsapp.com/INVITE_CODE"
+              href="https://whatsapp.com/channel/0029VbARGiQ1Hspxuq3Izp30"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-green-400 font-semibold transition-transform duration-300 hover:scale-105"

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Container from "./Container";
 import Image from "next/image";
 import Link from "next/link";
-import { BsFacebook, BsYoutube, BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsYoutube, BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -85,7 +85,14 @@ const Footer = () => {
       href: "https://www.instagram.com/agrovestorsfarmtech?utm_source=qr&igsh=OHZxZ2d0bGJqb3Vn",
       label: "Instagram",
     },
+    {
+      Icon: BsWhatsapp,
+      href: "https://whatsapp.com/channel/0029VbB7L0ND38CSUqHSJy0Q",
+      label: "WhatsApp",
+    },
   ];
+
+
 
   return (
     <footer
