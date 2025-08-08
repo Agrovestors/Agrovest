@@ -143,6 +143,7 @@ const Navbar = () => {
       dropdown: [
         { title: "The Farmers’ Insight", href: "/media/farmers-insight" },
         { title: "News", href: "/media/news" },
+        { title: "Gallery", href: "/media/gallery" },
       ],
     },
     { title: "Contact Us", href: "/contact" },
