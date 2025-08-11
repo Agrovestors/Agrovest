@@ -45,12 +45,12 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/augustine-ibechukwu-41b0ba323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    name: "Dr Akaebubechukwu James-Unueze",
-    role: "Project Manager",
+    name: "Dr. Ngozika Okechukwu-Ezike",
+    role: "Lead Researcher",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/94297a0585bc5ad3220707d35e89347176f6398e-2807x3258.png",
-    quote: "Enthusiastic about transforming agriculture!",
-    linkedin: "https://www.linkedin.com/in/akaebubechukwu-james-uneze-807569247",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.png",
+    quote: "Creating a greener future with smart research!",
+    linkedin: "https://www.linkedin.com/in/dr-ngozika-okechukwu-ezike-a7a997a0",
   },
 ];
 

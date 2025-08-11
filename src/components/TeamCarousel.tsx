@@ -49,13 +49,13 @@ const teamMembers: TeamMember[] = [
       "The visibility and engagement surrounding innovations in sustainable agriculture is communicated through strategic storytelling and stakeholder-focused content. That is our goal: Building trust, inspiring collaboration, and positioning Agrovestors as a leader in Africa’s agricultural transformation.",
   },
   {
-    name: "Dr Akaebubechukwu James-Unueze",
-    role: "Project Manager",
+    name: "Dr. Ngozika Okechukwu-Ezike",
+    role: "Lead Researcher",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/94297a0585bc5ad3220707d35e89347176f6398e-2807x3258.png",
-    quote: "Enthusiastic about transforming agriculture!",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.png",
+    quote: "Creating a greener future with smart research!",
     speech:
-      "Dr Akaebubechukwu ensures projects align with Agrovest’s mission for sustainable agriculture.",
+      "My research lights the way to a sustainable future for African farming. By exploring new ideas and practical solutions, I’m helping farmers grow stronger crops and healthier communities. At Agrovestors, we’re building a world where every harvest feeds hope and prosperity!",
   },
 ];
 
