@@ -31,8 +31,8 @@ export default function Mission() {
     tagline: "Making it cheaper… making it better… making it faster!",
     heroImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/3db6a416335d3821493d2a391759cd763d2ba99c-612x408.jpg",
     videos: [
-      { title: "Mission Video 1", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-      { title: "Mission Video 2", url: "https://www.youtube.com/embed/qC0vDKVPCrw" },
+      { title: "Intro Video", url: "https://www.youtube.com/embed/1RmDfbRKSpQ" },
+      { title: "The Science of Agri-Sustainability by Agrovestors", url: "https://www.youtube.com/embed/0BSPsWmKuKw" },
     ],
   };
 
