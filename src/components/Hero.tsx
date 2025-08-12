@@ -1,8 +1,26 @@
 import Image from "next/image";
 import { GiChemicalDrop, GiWheat, GiSmart, GiFamilyHouse } from "react-icons/gi";
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
 
 const Hero = () => {
+  // Array of new image URLs
+  const bannerImages = [
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/841c6d1d3954145c2f05b8b9434fd73edb271896-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/465558871988fa4f0825046104f962ecd320ebb7-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1e4601cb66d8b40440242306d74e75e8bb4ea439-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/02c36527d76228020abdd6c5611f16afaf2dce79-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/55d7270b6e212a11ed9bee49caddb011646e97c2-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b6a6993201ad796a10d63c32286eaddd5a49331-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/5f33181a09049d495bfed18a149249265ecce591-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b105d80aa4a56f4713caa45136a986cd86a5d10-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/990093866f62a14b5ead06b1bdece3efecc4ddb3-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deae6e3099145544421b9d6283cfd5ba2db1db5d-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b129c8dda2071a91e71f4456975652641e96dcf3-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0fea87ee1975573250ba35d98935d7344b330acf-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9a36b1b8bedcd34d6c12a316ae1cd0808cddf763-2880x3600.jpg",
+  ];
+
   return (
     <div className="w-full bg-gradient-to-r from-[#022c22] to-[#065f46] flex flex-col items-center justify-center pb-10 relative">
       {/* Video Background Section */}
@@ -51,16 +69,24 @@ const Hero = () => {
       {/* Image Slider */}
       <div className="mt-56 w-full relative z-10">
         <Marquee gradient={false} speed={50} className="w-full mb-10">
-          {[1, 2, 3, 4].map((_, index) => (
-            <div key={index} className="flex items-center mx-6">
+          {bannerImages.map((image, index) => (
+            <div key={index} className="flex items-center mx-6 relative group">
               <Image
-                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809b63ee3c4c401048a1628fde29fb136218575f-600x399.jpg"
-                alt="banner image"
+                src={image}
+                alt={`banner image ${index + 1}`}
                 width={300}
                 height={200}
-                className="object-contain rounded-lg transition-transform duration-300 pulse-hover"
+                className="object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
                 quality={75}
               />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+                <Link href="/media/gallery">
+                  <button className="text-white text-lg font-semibold bg-green-500 px-4 py-2 rounded-full hover:bg-green-400 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_10px_rgba(74,222,128,0.7)]">
+                    See More
+                  </button>
+                </Link>
+              </div>
             </div>
           ))}
         </Marquee>
