@@ -68,15 +68,15 @@ const Hero = () => {
 
       {/* Image Slider */}
       <div className="mt-56 w-full relative z-10">
-        <Marquee gradient={false} speed={50} className="w-full mb-10">
+        <Marquee gradient={false} speed={100} className="w-full mb-10">
           {bannerImages.map((image, index) => (
             <div key={index} className="flex items-center mx-6 relative group">
               <Image
                 src={image}
                 alt={`banner image ${index + 1}`}
                 width={300}
-                height={200}
-                className="object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+                height={150}
+                className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
                 quality={75}
               />
               {/* Hover Overlay */}
