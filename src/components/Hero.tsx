@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
         <video
           className="w-full h-full object-cover"
-          src="https://kickstart.org/wp-content/uploads/2023/08/landing-page-home_4.mp4"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/files/1f6e677e3420c22300f0cb2fb0a0cb147825d9a2.mp4"
           autoPlay
           loop
           muted
@@ -40,12 +40,9 @@ const Hero = () => {
             From poverty to prosperity in one season
           </h1>
           <a
-            href="https://www.youtube.com/embed/Z20wTT1re28?rel=0&autoplay=1"
-            data-featherlight="iframe"
-            data-featherlight-iframe-frameborder="0"
-            data-featherlight-iframe-allow="autoplay; encrypted-media"
-            data-featherlight-iframe-allowfullscreen="true"
-            data-featherlight-iframe-style="display:block;border:none;height:85vh;width:85vw;"
+            href="https://www.youtube.com/watch?v=1RmDfbRKSpQ"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 text-white text-xl font-semibold bg-green-500 px-6 py-3 rounded-full hover:bg-green-400 transition duration-200 glow-hover"
           >
             Watch the video
