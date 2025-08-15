@@ -4,7 +4,6 @@ import Marquee from "react-fast-marquee";
 import Link from "next/link";
 
 const Hero = () => {
-  // Array of new image URLs
   const bannerImages = [
     "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/841c6d1d3954145c2f05b8b9434fd73edb271896-3600x2880.jpg",
     "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/465558871988fa4f0825046104f962ecd320ebb7-3600x2880.jpg",
@@ -43,7 +42,7 @@ const Hero = () => {
             href="https://www.youtube.com/watch?v=1RmDfbRKSpQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 text-white text-xl font-semibold bg-green-500 px-6 py-3 rounded-full hover:bg-green-400 transition duration-200 glow-hover"
+            className="relative z-20 cursor-pointer mt-8 text-white text-xl font-semibold bg-green-500 px-6 py-3 rounded-full hover:bg-green-400 transition duration-200 glow-hover"
           >
             Watch the video
           </a>
@@ -51,7 +50,7 @@ const Hero = () => {
       </div>
 
       {/* Positioned background image (leaf) */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
         <Image
           src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.png"
           alt="leaf image"
@@ -78,10 +77,11 @@ const Hero = () => {
               />
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
-                <Link href="/media/gallery">
-                  <button className="text-white text-lg font-semibold bg-green-500 px-4 py-2 rounded-full hover:bg-green-400 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_10px_rgba(74,222,128,0.7)]">
-                    See More
-                  </button>
+                <Link
+                  href="/media/gallery"
+                  className="text-white text-lg font-semibold bg-green-500 px-4 py-2 rounded-full hover:bg-green-400 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_10px_rgba(74,222,128,0.7)]"
+                >
+                  See More
                 </Link>
               </div>
             </div>
@@ -89,7 +89,7 @@ const Hero = () => {
         </Marquee>
       </div>
 
-      {/* Info Box with Text + Feature Boxes */}
+      {/* Info Box */}
       <div className="bg-gray-800 w-full lg:w-[98%] min-h-screen rounded-2xl mt-20 shadow-lg p-8 md:p-10 flex flex-col justify-center items-center relative z-10 overflow-hidden border border-gray-600 fade-in-left">
         {/* Text Section */}
         <div className="text-center px-6 md:px-20 lg:px-40 mb-10">
@@ -98,8 +98,8 @@ const Hero = () => {
           </h2>
           <p className="text-lg md:text-xl text-gray-200 mt-2">
             Agrovestors is revolutionizing farming across Africa with bold
-            innovation, smart tech, and vibrant communities, empowering farmers to
-            thrive like never before.
+            innovation, smart tech, and vibrant communities, empowering farmers
+            to thrive like never before.
           </p>
         </div>
 
@@ -107,7 +107,9 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiChemicalDrop className="text-6xl text-green-400 mb-4" />
-            <h3 className="text-xl font-bold text-white">Research & Production</h3>
+            <h3 className="text-xl font-bold text-white">
+              Research & Production
+            </h3>
             <p className="text-sm text-gray-200 mt-2">
               Cutting feed costs by up to 40% with sustainable, locally sourced
               livestock feeds, driven by world-class R&D.
@@ -115,7 +117,9 @@ const Hero = () => {
           </div>
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiWheat className="text-6xl text-green-400 mb-4" />
-            <h3 className="text-xl font-bold text-white">Food Security & Welfare</h3>
+            <h3 className="text-xl font-bold text-white">
+              Food Security & Welfare
+            </h3>
             <p className="text-sm text-gray-200 mt-2">
               Empowering farmers with capital, training, and support to grow
               affordable, nutritious food for all of Africa.
@@ -123,18 +127,22 @@ const Hero = () => {
           </div>
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiSmart className="text-6xl text-green-400 mb-4" />
-            <h3 className="text-xl font-bold text-white">Tech & Smart Management</h3>
+            <h3 className="text-xl font-bold text-white">
+              Tech & Smart Management
+            </h3>
             <p className="text-sm text-gray-200 mt-2">
-              Revolutionizing farms with IntelliFeed360, our AI-powered platform
-              for smarter, more profitable management.
+              Revolutionizing farms with IntelliFeed360, our AI-powered
+              platform for smarter, more profitable management.
             </p>
           </div>
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiFamilyHouse className="text-6xl text-green-400 mb-4" />
-            <h3 className="text-xl font-bold text-white">Media & Community</h3>
+            <h3 className="text-xl font-bold text-white">
+              Media & Community
+            </h3>
             <p className="text-sm text-gray-200 mt-2">
-              Inspiring farmers with epic stories and digital communities, making
-              Agrovestors the agri-tech voice of Africa.
+              Inspiring farmers with epic stories and digital communities,
+              making Agrovestors the agri-tech voice of Africa.
             </p>
           </div>
         </div>

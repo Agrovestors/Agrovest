@@ -14,7 +14,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Stephen T. Onyewuenyi",
-    role: "CEO",
+    role: "Director",
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
