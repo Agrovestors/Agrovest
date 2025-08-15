@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/026057a75a851bbbf56f7ff92d19d801ade81ea6-1913x24290.png",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.png",
     quote: "Enthusiastic about coding for change!",
     linkedin: "https://www.linkedin.com/in/godwin-john-15a775287/",
   },

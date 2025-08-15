@@ -34,8 +34,8 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/026057a75a851bbbf56f7ff92d19d801ade81ea6-1913x24290.png",
-    quote: "Enthusiastic about coding for change!",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.png",
+    quote: "Very enthusiastic about coding for change!",
     speech:
       "I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
   },
