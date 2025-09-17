@@ -8,13 +8,13 @@ export default async function Media() {
       title: "Agrovestors Launches IntelliFeed360",
       description: "Our AI platform revolutionizes feed management in Nigeria.",
       slug: "intellifeed360-launch",
-      mainImage: { asset: { url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg" } },
+      mainImage: { asset: { url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpe" } },
     },
     {
       title: "Press Release: Sustainable Farming Initiative",
       description: "Agrovestors partners with local farmers for sustainability.",
       slug: "sustainable-farming-initiative",
-      mainImage: { asset: { url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg" } },
+      mainImage: { asset: { url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpe" } },
     },
   ];
 
@@ -63,7 +63,7 @@ export default async function Media() {
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
               },
             },
           }),

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/post",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -34,7 +34,7 @@ export default async function PostPage({ params }: PageProps) {
       _id: "post-1",
       title: "Advancing Sustainable Agriculture in Nigeria",
       description: "How Agrovestors is transforming farming with technology.",
-      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpe",
       slug: { current: "sustainable-agriculture-nigeria" },
       author: { name: "Agrovestors Team" },
       publishedAt: "2025-05-01T12:00:00Z",
@@ -49,7 +49,7 @@ export default async function PostPage({ params }: PageProps) {
       _id: "post-2",
       title: "IntelliFeed360: The Future of Feed Management",
       description: "Our AI platform optimizes livestock feed efficiency.",
-      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpe",
       slug: { current: "intellifeed360-future" },
       author: { name: "Agrovestors Team" },
       publishedAt: "2025-04-15T12:00:00Z",

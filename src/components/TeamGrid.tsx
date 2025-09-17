@@ -53,10 +53,10 @@ export default function TeamGrid({ teamMembers }: TeamGridProps) {
                       height={128}
                       className="rounded-full object-cover border-4 border-green-400"
                       placeholder="blur"
-                      blurDataURL="/images/placeholder.png"
+                      blurDataURL="/images/placeholder.pne"
                       onError={(e) => {
                         console.error(`Image failed for ${member.name}: ${member.imgSrc}`);
-                        e.currentTarget.src = "/images/placeholder.png";
+                        e.currentTarget.src = "/images/placeholder.pne";
                       }}
                     />
                   </div>
