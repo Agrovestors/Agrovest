@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
       "I'm optimistic about the future of Agriculture in Nigeria and Africa beyond. At Agrovestors, the impossible becomes possible.",
   },
   {
-    name: "Godwin Adakonye John",
+    name: " John",
     role: "Fullstack Developer",
     imgSrc:
       "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.pne",
@@ -161,7 +161,7 @@ export default function TeamCarousel() {
               />
             </div>
             <div className="w-full sm:w-3/5 flex-1 pt-2 sm:pt-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white bounce-in">
+              {/* <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white bounce-in">
                 {currentMember.name}
               </h3>
               <p className="text-green-400 text-sm sm:text-base mt-1">
@@ -172,7 +172,8 @@ export default function TeamCarousel() {
               </p>
               <p className="text-gray-200 text-xs sm:text-sm lg:text-base mt-2 break-words hyphens-auto italic max-h-[300px] overflow-y-auto">
                 {currentMember.speech}
-              </p>
+              </p> */}
+              {/* //database issue */}
             </div>
           </div>
         </div>

@@ -70,7 +70,7 @@ export default function AFTech() {
               Our 4-Goal Agenda
             </h2>
             <div className="space-y-8">
-              {goals.map((goal, index) => (
+              {/* {goals.map((goal, index) => (
                 <div
                   key={index}
                   className="bg-gray-800 p-6 rounded-lg shadow-lg fade-in-left"
@@ -79,7 +79,9 @@ export default function AFTech() {
                   <h3 className="text-2xl font-semibold text-white mb-2">{goal.title}</h3>
                   <p className="text-gray-200">{goal.description}</p>
                 </div>
-              ))}
+              ))} */}
+              {/* //database issue */}
+
             </div>
           </div>
         </section>
