@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/values/production/other/black-soldier-fly",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpe",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpg",
           width: 6000,
           height: 4000,
           alt: "Agrovestors Black Soldier Fly Farming Research",
@@ -32,7 +32,7 @@ export default function BlackSoldierFlyProduction() {
     title: "Black Soldier Fly Farming Research in Progress",
     description: "At Agrovestors, we’re diving deep into sustainable insect farming innovations. Our team is working tirelessly to develop cutting-edge solutions that enhance productivity while preserving our ecosystems. Stay tuned—exciting updates are on the way!",
     ctaText: "Want to be the first to know? Follow us on social media or join our newsletter for the latest breakthroughs.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpe",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpg",
   };
 
   const data = bsfResearch;

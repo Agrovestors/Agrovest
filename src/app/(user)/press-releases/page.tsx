@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/media/press-releases",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Farm Tech Logo",
@@ -38,7 +38,7 @@ export default async function PressReleases() {
   // Placeholder data (replace with Sanity fetch when schema is set up)
   // const media = await client.fetch(query);
   const media = {
-    mainImage: { asset: { url: "/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpe" } },
+    mainImage: { asset: { url: "/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpg" } },
   };
   const staticContent = {
     title: "Press Releases",
@@ -88,7 +88,7 @@ export default async function PressReleases() {
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
               },
             },
           }),

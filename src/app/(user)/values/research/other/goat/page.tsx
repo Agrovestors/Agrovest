@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/values/production/other/goat",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Goat Farming Research",
@@ -32,7 +32,7 @@ export default function GoatProduction() {
     title: "Goat Farming Research in Progress",
     description: "At Agrovestors, we’re diving deep into sustainable livestock farming innovations. Our team is working tirelessly to develop cutting-edge solutions that enhance productivity while preserving our ecosystems. Stay tuned—exciting updates are on the way!",
     ctaText: "Want to be the first to know? Follow us on social media or join our newsletter for the latest breakthroughs.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
   };
 
   const data = goatResearch;

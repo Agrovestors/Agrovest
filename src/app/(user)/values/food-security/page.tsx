@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/values/food-security",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Logo",
@@ -31,7 +31,7 @@ export default function FoodSecurity() {
   const foodSecurity = {
     title: "Food Security",
     description: "Learn about our commitment to food security.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/227b526492c1d1380554fee0cd525205ef04e9f3-612x408.jpe",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/227b526492c1d1380554fee0cd525205ef04e9f3-612x408.jpg",
     content: "We aim to ensure sustainable food production for all.",
   };
 

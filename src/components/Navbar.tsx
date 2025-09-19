@@ -334,7 +334,7 @@ const Navbar = () => {
 
       <Link href="/" className="flex items-center group" aria-label="Agrovestors Farm Tech Home">
         <Image
-          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png"
           alt="Agrovestors Farm Tech Logo"
           width={48}
           height={48}

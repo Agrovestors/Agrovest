@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Agrovestors Farm Tech",
     images: [
       {
-        url: "/AGROINVESTORLOGO.pne",
+        url: "/AGROINVESTORLOGO.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Farm Tech Logo",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Agrovestors Farm Tech",
     description:
       "Sustainable agriculture and innovative farm technology with Agrovestors.",
-    images: ["/AGROINVESTORLOGO.pne"],
+    images: ["/AGROINVESTORLOGO.png"],
     creator: "@AgrovestorsTech",
   },
   robots: {
@@ -83,7 +83,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link
           rel="preload"
-          href="/AGROINVESTORLOGO.pne"
+          href="/AGROINVESTORLOGO.png"
           as="image"
         />
         <script
@@ -94,7 +94,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Agrovestors Farm Tech",
               url: "https://agrovestors.com",
-              logo: "/AGROINVESTORLOGO.pne",
+              logo: "/AGROINVESTORLOGO.png",
               description:
                 "Agrovestors Farm Tech provides innovative and sustainable agriculture solutions.",
               sameAs: [

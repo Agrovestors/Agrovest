@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/about/philosophy",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Logo",
@@ -31,7 +31,7 @@ export default function Philosophy() {
   const philosophy = {
     title: "Our Philosophy",
     description: "We believe that the future of agriculture lies in our ability to integrate cutting-edge technology with sustainable practices.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpe",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpg",
     content: "Our philosophy is rooted in sustainability, innovation, and community empowerment.",
   };
 
@@ -41,32 +41,32 @@ export default function Philosophy() {
     {
       title: "Innovation",
       description: "Innovation is a catalyst for change, a driving force behind agricultural transformation.",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b664142d398bd64801f26ada8a734fcf5a3a4d69-3840x2160.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b664142d398bd64801f26ada8a734fcf5a3a4d69-3840x2160.jpg",
     },
     {
       title: "Sustainability",
       description: "Sustainability is the cornerstone of operations.",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
     },
     {
       title: "Collaboration",
       description: "True progress is achieved through Collaboration.",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/f18981f2509046f3559876ebc166fefe97a72240-612x390.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/f18981f2509046f3559876ebc166fefe97a72240-612x390.jpg",
     },
     {
       title: "Ethical Integrity and Excellence",
       description: "A vision without Ethical Integrity and Excellence is a waste of energy and resources.",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0c695d1b3e40801dcdac42f48d979d1223df18dc-612x344.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0c695d1b3e40801dcdac42f48d979d1223df18dc-612x344.jpg",
     },
     {
       title: "Adaptability and Resilience",
       description: "Adaptability and Resilience are essential tools that drive refined success.",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6b3d894fd7fd758af876268da283dea64dc311bc-612x408.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6b3d894fd7fd758af876268da283dea64dc311bc-612x408.jpg",
     },
     {
       title: "Visioned Leadership",
       description: "With all these, a Visioned Leadership is POSSIBLE!",
-      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/49afe0f77b6ffa21dba5b2fdca906477730e0f09-612x422.jpe",
+      image: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/49afe0f77b6ffa21dba5b2fdca906477730e0f09-612x422.jpg",
     },
   ];
 
@@ -85,7 +85,7 @@ export default function Philosophy() {
             “When we invest in the future and cultivate innovation, we harvest prosperity.”
           </p>
           <Image
-            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpe"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cf85c9e65303dcb4c9dcc48b3a4c1bb870983cb7-612x408.jpg"
             alt="Philosophy Quote"
             width={612}
             height={408}
@@ -130,7 +130,7 @@ export default function Philosophy() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-8 fade-in-left">Our Cultural Value</h2>
           <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deb21cf37fbda2bcaa6094856b123ec009ff7f29-612x408.jpe"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deb21cf37fbda2bcaa6094856b123ec009ff7f29-612x408.jpg"
               alt="Our Cultural Value"
               width={800}
               height={408}

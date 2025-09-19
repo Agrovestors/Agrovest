@@ -5,19 +5,19 @@ import Link from "next/link";
 
 const Hero = () => {
   const bannerImages = [
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/841c6d1d3954145c2f05b8b9434fd73edb271896-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/465558871988fa4f0825046104f962ecd320ebb7-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1e4601cb66d8b40440242306d74e75e8bb4ea439-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/02c36527d76228020abdd6c5611f16afaf2dce79-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/55d7270b6e212a11ed9bee49caddb011646e97c2-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b6a6993201ad796a10d63c32286eaddd5a49331-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/5f33181a09049d495bfed18a149249265ecce591-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b105d80aa4a56f4713caa45136a986cd86a5d10-3600x2880.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/990093866f62a14b5ead06b1bdece3efecc4ddb3-2880x3600.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deae6e3099145544421b9d6283cfd5ba2db1db5d-2880x3600.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b129c8dda2071a91e71f4456975652641e96dcf3-2880x3600.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0fea87ee1975573250ba35d98935d7344b330acf-2880x3600.jpe",
-    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9a36b1b8bedcd34d6c12a316ae1cd0808cddf763-2880x3600.jpe",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/841c6d1d3954145c2f05b8b9434fd73edb271896-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/465558871988fa4f0825046104f962ecd320ebb7-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1e4601cb66d8b40440242306d74e75e8bb4ea439-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/02c36527d76228020abdd6c5611f16afaf2dce79-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/55d7270b6e212a11ed9bee49caddb011646e97c2-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b6a6993201ad796a10d63c32286eaddd5a49331-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/5f33181a09049d495bfed18a149249265ecce591-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9b105d80aa4a56f4713caa45136a986cd86a5d10-3600x2880.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/990093866f62a14b5ead06b1bdece3efecc4ddb3-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/deae6e3099145544421b9d6283cfd5ba2db1db5d-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b129c8dda2071a91e71f4456975652641e96dcf3-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0fea87ee1975573250ba35d98935d7344b330acf-2880x3600.jpg",
+    "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9a36b1b8bedcd34d6c12a316ae1cd0808cddf763-2880x3600.jpg",
   ];
 
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
         <video
           className="w-full h-full object-cover"
-          // src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/files/1f6e677e3420c22300f0cb2fb0a0cb147825d9a2.mp4"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/files/1f6e677e3420c22300f0cb2fb0a0cb147825d9a2.mp4"
           autoPlay
           loop
           muted
@@ -52,7 +52,7 @@ const Hero = () => {
       {/* Positioned background image (leaf) */}
       <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
         <Image
-          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.pne"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.png"
           alt="leaf image"
           fill
           style={{ objectFit: "cover" }}
@@ -92,7 +92,7 @@ const Hero = () => {
       {/* Info Box */}
       <div className="bg-gray-800 w-full lg:w-[98%] min-h-screen rounded-2xl mt-20 shadow-lg p-8 md:p-10 flex flex-col justify-center items-center relative z-10 overflow-hidden border border-gray-600 fade-in-left">
         {/* Text Section */}
-        {/* <div className="text-center px-6 md:px-20 lg:px-40 mb-10">
+        <div className="text-center px-6 md:px-20 lg:px-40 mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white bounce-in">
             Transforming African Agriculture
           </h2>
@@ -101,10 +101,10 @@ const Hero = () => {
             innovation, smart tech, and vibrant communities, empowering farmers
             to thrive like never before.
           </p>
-        </div> */}
+        </div>
 
         {/* Feature Boxes */}
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiChemicalDrop className="text-6xl text-green-400 mb-4" />
             <h3 className="text-xl font-bold text-white">
@@ -145,13 +145,12 @@ const Hero = () => {
               making Agrovestors the agri-tech voice of Africa.
             </p>
           </div>
-        </div> */}
-              {/* //database issue */}
+        </div>
 
         {/* Image Section */}
         <div className="mt-8 w-full">
           <Image
-            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cb1caf99a068ab9b027bbf3185d6c2890b2e0e39-2560x1346.pne"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/cb1caf99a068ab9b027bbf3185d6c2890b2e0e39-2560x1346.png"
             alt="agriculture showcase"
             width={1200}
             height={200}

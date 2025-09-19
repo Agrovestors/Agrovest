@@ -65,7 +65,7 @@ export default function ContactContent({
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
               },
             },
             contactPoint: {

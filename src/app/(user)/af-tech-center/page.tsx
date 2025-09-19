@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/af-tech-center",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Logo",
@@ -31,7 +31,7 @@ export default function AFTechCenter() {
   const afTechCenter = {
     title: "A.F-Tech Center",
     description: "Discover our A.F-Tech Center for agricultural innovation.",
-    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8ceae45fbac6a7a65d5cba07a31daa5dbac1a8cb-612x344.jpe",
+    mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8ceae45fbac6a7a65d5cba07a31daa5dbac1a8cb-612x344.jpg",
     content: "The A.F-Tech Center drives cutting-edge agricultural technology.",
   };
 

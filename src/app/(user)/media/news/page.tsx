@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
             url: "https://agrovestors.com/media/news",
             images: [
                 {
-                    url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/db0ddae930150a4623a509ac0d894e98a54b12ec-2560x1920.pne",
+                    url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/db0ddae930150a4623a509ac0d894e98a54b12ec-2560x1920.png",
                     width: 2560,
                     height: 1920,
                     alt: "Agrovestors News Updates",
@@ -32,8 +32,8 @@ export default function News() {
         title: "News Updates Coming Soon",
         description: "At Agrovestors Farm Tech, we’re shaping the future of agriculture. Our team is preparing to share exciting news about our latest agritech innovations, strategic partnerships, and upcoming events. Stay tuned for stories that inspire and inform!",
         ctaText: "Want to stay in the loop? Follow us on social media or join our newsletter for the latest updates.",
-        mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
-        teaserImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/db0ddae930150a4623a509ac0d894e98a54b12ec-2560x1920.pne",
+        mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
+        teaserImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/db0ddae930150a4623a509ac0d894e98a54b12ec-2560x1920.png",
     };
 
     const data = newsData;

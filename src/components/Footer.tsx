@@ -114,7 +114,7 @@ const Footer = () => {
       `}</style>
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <Image
-          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.pne"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8637c25a4a4f98bd29fbbf0502dea0402560946a-5000x5000.png"
           alt="Leaf background"
           fill
           style={{ objectFit: "cover" }}
@@ -126,7 +126,7 @@ const Footer = () => {
         <div className="flex flex-col items-start animate-fade-in-up">
           <Link href="/" className="flex items-center group" aria-label="Agrovestors Farm Tech Home">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png"
               alt="Agrovestors Farm Tech Logo"
               width={60}
               height={60}
@@ -233,7 +233,7 @@ const Footer = () => {
             "@type": "Organization",
             name: "Agrovestors Farm Tech",
             url: "https://agrovestors.com",
-            logo: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+            logo: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
             description: "Agrovestors Farm Tech provides innovative and sustainable agriculture solutions.",
             sameAs: socialLinks.map((link) => link.href),
             contactPoint: {
