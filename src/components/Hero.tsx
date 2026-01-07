@@ -92,7 +92,7 @@ const Hero = () => {
       {/* Info Box */}
       <div className="bg-gray-800 w-full lg:w-[98%] min-h-screen rounded-2xl mt-20 shadow-lg p-8 md:p-10 flex flex-col justify-center items-center relative z-10 overflow-hidden border border-gray-600 fade-in-left">
         {/* Text Section */}
-        {/* <div className="text-center px-6 md:px-20 lg:px-40 mb-10">
+        <div className="text-center px-6 md:px-20 lg:px-40 mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white bounce-in">
             Transforming African Agriculture
           </h2>
@@ -101,10 +101,10 @@ const Hero = () => {
             innovation, smart tech, and vibrant communities, empowering farmers
             to thrive like never before.
           </p>
-        </div> */}
+        </div>
 
         {/* Feature Boxes */}
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           <div className="bg-gray-700 rounded-lg p-5 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-600 glow-hover">
             <GiChemicalDrop className="text-6xl text-green-400 mb-4" />
             <h3 className="text-xl font-bold text-white">
@@ -145,7 +145,7 @@ const Hero = () => {
               making Agrovestors the agri-tech voice of Africa.
             </p>
           </div>
-        </div> */}
+        </div>
               {/* //database issue */}
 
         {/* Image Section */}
