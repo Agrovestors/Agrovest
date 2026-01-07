@@ -7,7 +7,7 @@ const nextConfig = {
         hostname: 'www.sanity.io',
         pathname: '/**',
       },
-      {
+      { 
         protocol: "https",
         hostname: "cdn.sanity.io",
         pathname: "**",
