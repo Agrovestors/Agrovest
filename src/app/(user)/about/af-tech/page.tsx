@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/about/af-tech",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -54,7 +54,7 @@ export default function AFTech() {
             Learn about A.F-Tech, a division of Agrovestors Farm Tech.
           </p>
           <Image
-            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1a04f689053a2786f2b16d50724e97a803f998dd-7360x4912.jpe"
+            src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1a04f689053a2786f2b16d50724e97a803f998dd-7360x4912.jpg"
             alt="A.F-Tech"
             width={800}
             height={533}
@@ -100,7 +100,7 @@ export default function AFTech() {
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
               },
             },
             mainEntity: {

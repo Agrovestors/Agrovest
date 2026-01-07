@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/values/intellifly360",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -40,7 +40,7 @@ export default function IntelliFly360() {
           </div>
           <div className="w-full lg:w-1/2">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/918869b06d74f878a136cce82b7465a63901dc95-1755x1240.jpe"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/918869b06d74f878a136cce82b7465a63901dc95-1755x1240.jpg"
               alt="Black soldier fly larvae in a farm setting"
               width={4160}
               height={6240}
@@ -168,25 +168,25 @@ export default function IntelliFly360() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/4d59c33d9f8734c386351a046b0921ea8f24e740-6000x4000.jpg",
                 alt: "Black soldier fly",
                 width: 6000,
                 height: 4000,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/accb703336a775c288971512b32beb0ae44ff226-3235x2116.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/accb703336a775c288971512b32beb0ae44ff226-3235x2116.jpg",
                 alt: "Zoomed-in black soldier fly",
                 width: 3235,
                 height: 2116,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/d282e14da3c3c04325a26ab2733a13900d6e14be-2064x1421.pne",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/d282e14da3c3c04325a26ab2733a13900d6e14be-2064x1421.png",
                 alt: "Personnel discussing Intellifly360",
                 width: 2064,
                 height: 1421,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7b4e84be649b48571fcb2f7533733104376a52e-2560x1771.pne",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7b4e84be649b48571fcb2f7533733104376a52e-2560x1771.png",
                 alt: "Personnel showcasing BSF products",
                 width: 2560,
                 height: 1771,

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpe",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg",
         width: 1200,
         height: 630,
         alt: "Advancing Sustainable Agriculture in Nigeria",

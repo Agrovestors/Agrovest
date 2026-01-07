@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/mission",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -29,7 +29,7 @@ export default function Mission() {
     description: "We lead the charge in sustainable agribusiness solutions, global food security and in cost control.",
     vision: "Our vision is ambitious and borderless. We aim to be the unrivaled global leader in agro-network excellence, spearheading investment, digital mechanization, and e-commerce solutions.",
     tagline: "Making it cheaper… making it better… making it faster!",
-    heroImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/3db6a416335d3821493d2a391759cd763d2ba99c-612x408.jpe",
+    heroImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/3db6a416335d3821493d2a391759cd763d2ba99c-612x408.jpg",
     videos: [
       { title: "Intro Video", url: "https://www.youtube.com/embed/1RmDfbRKSpQ" },
       { title: "The Science of Agri-Sustainability by Agrovestors", url: "https://www.youtube.com/embed/0BSPsWmKuKw" },
@@ -101,7 +101,7 @@ export default function Mission() {
               className="block bg-gray-800 p-6 shadow-lg rounded-lg transition-all duration-300 pulse-hover staggered-fade cursor-pointer"
             >
               <Image
-                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpe"
+                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpg"
                 alt="Agrovestors Community"
                 width={612}
                 height={397}
@@ -116,7 +116,7 @@ export default function Mission() {
               style={{ animationDelay: "150ms" }}
             >
               <Image
-                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7926955c626dd37be4c0f49d268f97d7c0d72f8-612x410.jpe"
+                src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/b7926955c626dd37be4c0f49d268f97d7c0d72f8-612x410.jpg"
                 alt="A.F-Tech Center"
                 width={612}
                 height={410}
@@ -164,7 +164,7 @@ export default function Mission() {
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
               },
             },
             mainEntity: {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/values",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Farm Tech Logo",
@@ -37,13 +37,13 @@ export default async function Values() {
       title: "Research",
       slug: "research",
       description: "Advanced feed and nutrition research for fish, poultry, and swine.",
-      mainImage: { asset: { url: "/bg/large-green-rice-field-with-green-rice-plants-rows.jpe" } },
+      mainImage: { asset: { url: "/bg/large-green-rice-field-with-green-rice-plants-rows.jpg" } },
     },
     {
       title: "Animal Production",
       slug: "production",
       description: "Sustainable production of catfish, tilapia, broilers, and more.",
-      mainImage: { asset: { url: "/bg/countryside-workers-out-field.jpe" } },
+      mainImage: { asset: { url: "/bg/countryside-workers-out-field.jpg" } },
     },
     {
       title: "IntelliFly360",
@@ -55,13 +55,13 @@ export default async function Values() {
       title: "IntelliFeed360",
       slug: "intellifeed360",
       description: "AI-powered feed optimization platform.",
-      mainImage: { asset: { url: "/bg/medium-shot-smiley-farmer-cornfield.jpe" } },
+      mainImage: { asset: { url: "/bg/medium-shot-smiley-farmer-cornfield.jpg" } },
     },
     {
       title: "Food Security",
       slug: "food-security",
       description: "Initiatives to ensure sustainable food supply chains.",
-      mainImage: { asset: { url: "/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpe" } },
+      mainImage: { asset: { url: "/bg/photorealistic-woman-organic-sustainable-garden-harvesting-produce.jpg" } },
     },
   ];
 
@@ -90,7 +90,7 @@ export default async function Values() {
               name: "Agrovestors Farm Tech",
               logo: {
                 "@type": "ImageObject",
-                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+                url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
               },
             },
             mainEntity: services.map((service) => ({

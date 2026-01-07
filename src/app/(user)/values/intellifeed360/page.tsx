@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/values/intellifeed360",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -40,7 +40,7 @@ export default function IntelliFeed360() {
           </div>
           <div className="w-full lg:w-1/2">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/77039c41b66e34601d0ac5d1f65de1086c0ffea8-5760x3840.jpe"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/77039c41b66e34601d0ac5d1f65de1086c0ffea8-5760x3840.jpg"
               alt="IntelliFeed360 livestock"
               width={5760}
               height={3840}
@@ -130,25 +130,25 @@ export default function IntelliFeed360() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1a04f689053a2786f2b16d50724e97a803f998dd-7360x4912.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/1a04f689053a2786f2b16d50724e97a803f998dd-7360x4912.jpg",
                 alt: "Livestock in field",
                 width: 7360,
                 height: 4912,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/e1e5765c3d7cbeb3fe977b3b70d92a43b3a3d1aa-3000x2000.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/e1e5765c3d7cbeb3fe977b3b70d92a43b3a3d1aa-3000x2000.jpg",
                 alt: "Cows grazing",
                 width: 3000,
                 height: 2000,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8974bd59052044aff41629691c332a4ef922942c-3692x2082.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8974bd59052044aff41629691c332a4ef922942c-3692x2082.jpg",
                 alt: "Livestock monitoring",
                 width: 3692,
                 height: 2082,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea253d7333c0a06a420c6f15ee76e2e4f98eb453-612x394.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea253d7333c0a06a420c6f15ee76e2e4f98eb453-612x394.jpg",
                 alt: "Farm animals",
                 width: 612,
                 height: 394,

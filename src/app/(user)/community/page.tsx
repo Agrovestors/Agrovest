@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://agrovestors.com/community",
     images: [
       {
-        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+        url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
         width: 1080,
         height: 763,
         alt: "Agrovestors Logo",
@@ -40,7 +40,7 @@ export default function Community() {
           </div>
           <div className="w-full lg:w-1/2">
             <Image
-              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/f1867134650b22cb5a68edaab689efdfc39b2b25-612x556.jpe"
+              src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/f1867134650b22cb5a68edaab689efdfc39b2b25-612x556.jpg"
               alt="Hands holding growing plants"
               width={612}
               height={556}
@@ -102,19 +102,19 @@ export default function Community() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/fff2c70820d03f17c73a7dcfe7ae8f585b5f54d7-612x408.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/fff2c70820d03f17c73a7dcfe7ae8f585b5f54d7-612x408.jpg",
                 alt: "Community farming activity",
                 width: 612,
                 height: 408,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/9d96cc2ee6d627bac20572594d1311fc5b32e805-612x397.jpg",
                 alt: "Agrovestors farmers collaboration",
                 width: 612,
                 height: 397,
               },
               {
-                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/e01f7b647fda0227143514c654ac40f5849e9033-612x408.jpe",
+                src: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/e01f7b647fda0227143514c654ac40f5849e9033-612x408.jpg",
                 alt: "Men harvesting crops",
                 width: 612,
                 height: 408,

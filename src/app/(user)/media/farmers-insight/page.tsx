@@ -8,13 +8,13 @@ export default function FarmersInsight() {
       title: "Sustainable Farming Practices",
       description: "Farmers share insights on eco-friendly techniques.",
       slug: "sustainable-farming-practices",
-      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpe",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/6eebda830b2c46d839a20b7b9f0a5667a99f5cf2-5616x3744.jpg",
     },
     {
       title: "AI in Agriculture",
       description: "How AI is transforming farming in Nigeria.",
       slug: "ai-in-agriculture",
-      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpe",
+      mainImage: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8a8a4733fb9667c2eac02312a57f81ea12d937fd-612x408.jpg",
     },
   ];
 

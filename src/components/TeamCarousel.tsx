@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
     name: "Stephen T. Onyewuenyi",
     role: "Director",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
     speech:
       "The future of Agrovestors Farm-Tech is rooted in transformative innovation, collaborative partnerships, and tech-driven agribusiness. We envision a self-sustaining agricultural ecosystem that bridges the gap between research, practical farming, and intelligent technology, unlocking unprecedented value for farmers, students, investors, and the entire food value chain. With our three-core pillars, which are Research & Production, Smart Agro-Management Systems, and Media. We are not just solving problems, we are redefining African agriculture.",
@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     name: "Joseph Enare Ogakwu",
     role: "Head of IT Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.png",
     quote: "Innovating for a sustainable future.",
     speech:
       "I'm optimistic about the future of Agriculture in Nigeria and Africa beyond. At Agrovestors, the impossible becomes possible.",
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     name: " John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.png",
     quote: "Very enthusiastic about coding for change!",
     speech:
       "I’m driven by the power of technology to revolutionize agriculture. My work focuses on crafting seamless, scalable applications that empower farmers, investors, and communities with tools for sustainable growth. By bridging innovation with practical solutions, I’m committed to building a future where African agriculture thrives through smart, tech-driven systems, ensuring prosperity for generations to come.",
@@ -43,7 +43,7 @@ const teamMembers: TeamMember[] = [
     name: "Augustine C. Ibechukwu",
     role: "Head of the Media Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
     quote: "Enthusiastic about transforming agriculture!",
     speech:
       "The visibility and engagement surrounding innovations in sustainable agriculture is communicated through strategic storytelling and stakeholder-focused content. That is our goal: Building trust, inspiring collaboration, and positioning Agrovestors as a leader in Africa’s agricultural transformation.",
@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Ngozika Okechukwu-Ezike",
     role: "Lead Researcher",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.png",
     quote: "Creating a greener future with smart research!",
     speech:
       "My research lights the way to a sustainable future for African farming. By exploring new ideas and practical solutions, I’m helping farmers grow stronger crops and healthier communities. At Agrovestors, we’re building a world where every harvest feeds hope and prosperity!",

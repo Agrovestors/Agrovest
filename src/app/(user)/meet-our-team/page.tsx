@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
     name: "Stephen T. Onyewuenyi",
     role: "Director",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/0f339f727afb89556694b6fdaf95eaecf8c995da-1561x1760.png",
     quote: "Passionate about transforming agriculture!",
     linkedin: "https://www.linkedin.com/in/stephen-onyewuenyi-4ab524232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
     name: "Joseph Enare Ogakwu",
     role: "Head of IT Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/30c299ef7967efd48300d041d24f83411a5eef1c-2048x2731.png",
     quote: "Innovating for a sustainable future.",
     linkedin: "https://www.linkedin.com/in/joseph-ogakwu",
   },
@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
     name: "Godwin Adakonye John",
     role: "Fullstack Developer",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/ea6323c3a8b526810c3bbd925ea260af9a9886f2-1727x1996.png",
     quote: "Enthusiastic about coding for change!",
     linkedin: "https://www.linkedin.com/in/godwin-john-15a775287/",
   },
@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     name: "Augustine C. Ibechukwu",
     role: "Head of the Media Team",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/809f0220127b5e77d599606f34ce1e75796fd9e9-768x768.png",
     quote: "Enthusiastic about transforming agriculture!",
     linkedin: "https://www.linkedin.com/in/augustine-ibechukwu-41b0ba323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
@@ -48,7 +48,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Ngozika Okechukwu-Ezike",
     role: "Lead Researcher",
     imgSrc:
-      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.pne",
+      "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/8264a7b28ffe42ab484298c990989008895eb567-2158x2735.png",
     quote: "Creating a greener future with smart research!",
     linkedin: "https://www.linkedin.com/in/dr-ngozika-okechukwu-ezike-a7a997a0",
   },
@@ -64,7 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://agrovestors.com/meet-our-team",
       images: [
         {
-          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.pne",
+          url: "https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/images/7faef82b68d41a7082c4b7d22b828abe30a138cf-1080x763.png",
           width: 1080,
           height: 763,
           alt: "Agrovestors Logo",
