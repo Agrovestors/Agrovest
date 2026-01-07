@@ -90,7 +90,7 @@ export default function MeetOurTeam() {
             {teamMembers.map((member) => (
               <div key={member.name} className="team-card">
                 <div className="image-container">
-                  {/* <Image
+                  <Image
                     src={member.imgSrc}
                     alt={member.name}
                     width={192}
@@ -99,15 +99,14 @@ export default function MeetOurTeam() {
                     sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
                     className="object-cover w-full h-full rounded-full"
                     priority
-                  /> */}
-              {/* //database issue */}
+                  />
 
                 </div>
-                {/* <h3 className="text-xl font-semibold text-center">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-center">{member.name}</h3>
                 <p className="text-base text-gray-600 mb-2 text-center">{member.role}</p>
-                <p className="text-sm text-gray-700 italic mb-4 text-center">{member.quote}</p> */}
+                <p className="text-sm text-gray-700 italic mb-4 text-center">{member.quote}</p>
                 <div className="flex justify-center">
-                  {/* <a
+                  <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -115,7 +114,7 @@ export default function MeetOurTeam() {
                     aria-label={`Visit ${member.name}'s LinkedIn profile`}
                   >
                     <FaLinkedin size={24} />
-                  </a> */}
+                  </a>
                 </div>
               </div>
             ))}
