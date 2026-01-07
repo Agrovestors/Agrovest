@@ -161,7 +161,7 @@ export default function TeamCarousel() {
               />
             </div>
             <div className="w-full sm:w-3/5 flex-1 pt-2 sm:pt-0">
-              {/* <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white bounce-in">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white bounce-in">
                 {currentMember.name}
               </h3>
               <p className="text-green-400 text-sm sm:text-base mt-1">
@@ -172,8 +172,7 @@ export default function TeamCarousel() {
               </p>
               <p className="text-gray-200 text-xs sm:text-sm lg:text-base mt-2 break-words hyphens-auto italic max-h-[300px] overflow-y-auto">
                 {currentMember.speech}
-              </p> */}
-              {/* //database issue */}
+              </p>
             </div>
           </div>
         </div>
