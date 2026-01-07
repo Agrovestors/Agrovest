@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
         <video
           className="w-full h-full object-cover"
-          // src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/files/1f6e677e3420c22300f0cb2fb0a0cb147825d9a2.mp4"
+          src="https://cdn.sanity.io/media-libraries/mlaKfSRt1EzA/files/1f6e677e3420c22300f0cb2fb0a0cb147825d9a2.mp4"
           autoPlay
           loop
           muted
