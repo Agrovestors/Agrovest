@@ -9,7 +9,7 @@ export { PageHeader, PageContainer, PageSection } from './pages/PageLayout';
 // Hero & Display
 export { default as Hero } from './display/Hero';
 export { default as Logo } from './common/Logo';
-export { default as RichText } from './content/RichText';
+export { RichText } from './content/RichText';
 
 // Teams & Carousels
 export { default as TeamCarousel } from './team/TeamCarousel';
