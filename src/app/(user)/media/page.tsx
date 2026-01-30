@@ -52,9 +52,12 @@ export default function Media() {
               className="group bg-gray-800 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <div className="relative w-full h-48 overflow-hidden">
-                <img
+                <Image
                   src={item.mainImage.asset.url}
                   alt={item.title}
+                  width={400}
+                  height={200}
+                  quality={90}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
