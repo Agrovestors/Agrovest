@@ -1,19 +1,22 @@
-// Layout & Structure Components
-export { default as Container } from './Container';
-export { default as Navbar } from './Navbar';
-export { default as Footer } from './Footer';
-export { PageHeader, PageContainer, PageSection } from './PageLayout';
+// Layout & Structure
+export { default as Container } from './layout/Container';
+export { default as Navbar } from './layout/Navbar';
+export { default as Footer } from './layout/Footer';
+
+// Page Components
+export { PageHeader, PageContainer, PageSection } from './pages/PageLayout';
 
 // Hero & Display
-export { default as Hero } from './Hero';
-export { default as Logo } from './Logo';
+export { default as Hero } from './display/Hero';
+export { default as Logo } from './common/Logo';
+export { default as RichText } from './content/RichText';
 
 // Teams & Carousels
-export { default as TeamCarousel } from './TeamCarousel';
-export { default as TeamGrid } from './TeamGrid';
+export { default as TeamCarousel } from './team/TeamCarousel';
+export { default as TeamGrid } from './team/TeamGrid';
 
 // Theme
-export { ThemeToggle } from './ThemeToggle';
+export { ThemeToggle } from './theme/ThemeToggle';
 
-// Rich Text
-export { default as RichText } from './RichText';
+// Studio
+export { default as StudioNavbar } from './studio/StudioNavbar';

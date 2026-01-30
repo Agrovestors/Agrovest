@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { PageContainer, PageHeader, PageSection } from '@/components/PageLayout';
+import { PageContainer, PageHeader, PageSection } from '@/components/pages/PageLayout';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'A.F-Tech Division',

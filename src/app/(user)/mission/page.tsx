@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { PageContainer, PageHeader, PageSection } from '@/components/PageLayout';
-import Container from '@/components/Container';
+import { PageContainer, PageHeader, PageSection } from '@/components/pages/PageLayout';
+import Container from '@/components/layout/Container';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Mission',

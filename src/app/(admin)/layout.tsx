@@ -1,5 +1,6 @@
 import "../style/globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import StudioNavbar from "@/components/studio/StudioNavbar";
 
 export const metadata = {
   title: "Next.js",
