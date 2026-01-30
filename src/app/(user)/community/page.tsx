@@ -27,12 +27,12 @@ export default function Community() {
           Be Part of the Agrovestors Farmers Network
         </h2>
         <p className="text-lg text-gray-200 dark:text-gray-300 mb-6 text-center">
-          At Agrovestors, we believe no farmer should grow alone. That's why we've created a space
+          At Agrovestors, we believe no farmer should grow alone. That&apos;s why we&apos;ve created a space
           where farmers, agribusiness owners, and agricultural enthusiasts can connect, share ideas,
           ask questions, and grow together.
         </p>
         <p className="text-lg text-gray-200 dark:text-gray-300 mb-4 text-center">
-          Whether you're just starting out or you're a seasoned grower, our community is here to
+          Whether you&apos;re just starting out or you&apos;re a seasoned grower, our community is here to
           support you with:
         </p>
         <ul className="list-disc list-inside text-green-400 font-semibold space-y-2 max-w-2xl mx-auto">
@@ -40,7 +40,7 @@ export default function Community() {
           <li>Market updates</li>
           <li>Tech tools and innovations</li>
           <li>Peer-to-peer support</li>
-          <li>Access to Agrovestors' updates and opportunities</li>
+          <li>Access to Agrovestors&apos; updates and opportunities</li>
         </ul>
         <div className="mt-6 text-center fade-in-left" style={{ animationDelay: '200ms' }}>
           <p className="text-xl font-bold text-white mb-2">Ready to grow with us?</p>
