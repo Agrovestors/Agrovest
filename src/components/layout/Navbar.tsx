@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 interface NavItem {
   title: string;
