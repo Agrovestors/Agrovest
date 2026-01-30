@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { PageContainer, PageHeader, PageSection } from '@/components/pages/PageLayout';
