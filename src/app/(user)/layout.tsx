@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import '../style/globals.css';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Agrovestors Farm Tech - Sustainable Agriculture Solutions',

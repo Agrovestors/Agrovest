@@ -1,9 +1,9 @@
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { PageContainer, PageHeader } from '@/components/PageLayout';
+import { PageContainer, PageHeader } from '@/components/pages/PageLayout';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Media & News',

@@ -1,5 +1,5 @@
-import Hero from '@/components/Hero';
-import TeamCarousel from '@/components/TeamCarousel';
+import Hero from '@/components/display/Hero';
+import TeamCarousel from '@/components/team/TeamCarousel';
 
 export default function Home() {
   const posts = [

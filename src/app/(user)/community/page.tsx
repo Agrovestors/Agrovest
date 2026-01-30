@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaWhatsapp } from 'react-icons/fa';
-import { PageContainer, PageHeader, PageSection } from '@/components/PageLayout';
+import { PageContainer, PageHeader, PageSection } from '@/components/pages/PageLayout';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Community',
