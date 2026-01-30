@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavItem {
   title: string;
@@ -347,7 +348,11 @@ const Navbar = () => {
         </span>
       </Link>
 
-      <div className="block lg:hidden">
+      <div className="hidden lg:flex items-center gap-4">
+        <ThemeToggle />
+      </div>
+
+      <div className="block lg:hidden flex items-center gap-2">
         <button
           onClick={toggleMenu}
           aria-label={isOpen ? "Close menu" : "Open menu"}
