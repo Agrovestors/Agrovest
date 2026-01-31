@@ -2,13 +2,31 @@
 
 import Container from "@/components/Container";
 
+interface ContactData {
+  title: string;
+  description: string;
+  infoTitle: string;
+  infoDescription: string;
+  office: {
+    title: string;
+    address: string[];
+  };
+  contactInfo: {
+    title: string;
+    email: string;
+    phone: string;
+  };
+}
+
+interface ContactContentProps {
+  contactData: ContactData;
+  ContactForm: React.ComponentType;
+}
+
 export default function ContactContent({
   contactData,
   ContactForm,
-}: {
-  contactData: any;
-  ContactForm: React.ComponentType;
-}) {
+}: ContactContentProps) {
   return (
     <div className="contact-page bg-gray-50 min-h-screen">
       <Container className="py-16 px-6">
@@ -78,21 +96,7 @@ export default function ContactContent({
           }),
         }}
       />
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-      `}</style>
+      
     </div>
   );
 }

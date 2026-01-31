@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -18,14 +17,6 @@ interface TeamGridProps {
 }
 
 export default function TeamGrid({ teamMembers }: TeamGridProps) {
-  useEffect(() => {
-    console.log("TeamGrid: Team Members:", teamMembers);
-    teamMembers.forEach((member) => {
-      const img = new window.Image();
-      img.src = member.imgSrc;
-      img.onerror = () => console.error(`Failed to load image for ${member.name}: ${member.imgSrc}`);
-    });
-  }, [teamMembers]);
 
   return (
     <div className="team-grid font-sans">
@@ -52,10 +43,7 @@ export default function TeamGrid({ teamMembers }: TeamGridProps) {
                       width={128}
                       height={128}
                       className="rounded-full object-cover border-4 border-green-400"
-                      placeholder="blur"
-                      blurDataURL="/images/placeholder.png"
                       onError={(e) => {
-                        console.error(`Image failed for ${member.name}: ${member.imgSrc}`);
                         e.currentTarget.src = "/images/placeholder.png";
                       }}
                     />

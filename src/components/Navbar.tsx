@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavItem {
   title: string;
@@ -266,7 +267,7 @@ const Navbar = () => {
           transition: background 0.4s ease;
         }
         .hamburger-open .hamburger-line:nth-child(1) {
-          animation: hamburgerToXTop 0.4s forwards cubic-bezier(0.68ഗ, -0.05, 0.32, 1.6);
+          animation: hamburgerToXTop 0.4s forwards cubic-bezier(0.68, -0.05, 0.32, 1.6);
           background: #4ade80;
         }
         .hamburger-open .hamburger-line:nth-child(2) {
@@ -363,6 +364,9 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden lg:flex gap-0.5 text-white font-medium items-center" role="list">
+        <li>
+          <ThemeToggle />
+        </li>
         {navigation.map((item) => (
           <li key={item.title} className="relative">
             {item.dropdown ? (
