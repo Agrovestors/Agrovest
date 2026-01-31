@@ -1,4 +1,4 @@
-import "../style/globals.css";
+import "../../../app/globals.css";
 
 export const metadata = {
   title: "Agrovestors Studio",
