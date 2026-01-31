@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../style/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -105,7 +98,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} pt-20`} suppressHydrationWarning>
+      <body className="font-sans pt-20" suppressHydrationWarning>
         <ThemeProvider defaultTheme="dark">
           <Navbar />
           {children}
