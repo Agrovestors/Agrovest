@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -70,36 +70,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link
-          rel="preload"
-          href="/AGROINVESTORLOGO.png"
-          as="image"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Agrovestors Farm Tech",
-              url: "https://agrovestors.com",
-              logo: "/AGROINVESTORLOGO.png",
-              description:
-                "Agrovestors Farm Tech provides innovative and sustainable agriculture solutions.",
-              sameAs: [
-                "https://twitter.com/AgrovestorsTech",
-                "https://www.linkedin.com/company/agrovestors",
-                "https://www.facebook.com/agrovestors",
-              ],
-            }),
-          }}
-        />
       </head>
       <body className="font-sans pt-20" suppressHydrationWarning>
         <ThemeProvider defaultTheme="dark">
