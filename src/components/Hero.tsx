@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GiChemicalDrop, GiWheat, GiSmart, GiFamilyHouse } from "react-icons/gi";
 import Marquee from "react-fast-marquee";
 import Link from "next/link";
 

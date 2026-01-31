@@ -2,7 +2,11 @@ import Link from "next/link";
 import { IoReturnDownBack } from "react-icons/io5";
 import Logo from "./Logo";
 
-const StudioNavbar = (props: any) => {
+interface StudioNavbarProps {
+  renderDefault: (props: StudioNavbarProps) => React.ReactNode;
+}
+
+const StudioNavbar = (props: StudioNavbarProps) => {
   return (
     <div>
       <div className="p-5 bg-black text-gray-100 flex items-center justify-between">

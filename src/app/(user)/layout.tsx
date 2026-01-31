@@ -3,14 +3,13 @@ import { Inter } from "next/font/google";
 import "../style/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap", // Ensures font loads quickly
-  variable: "--font-inter", // CSS variable for fallback
+  display: "swap",
+  variable: "--font-inter",
 });
-
-const fallbackFont = "font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;";
 
 export const metadata: Metadata = {
   title: {
@@ -106,10 +105,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${fallbackFont} pt-20`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${inter.className} pt-20`} suppressHydrationWarning>
+        <ThemeProvider defaultTheme="dark">
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
