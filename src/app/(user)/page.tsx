@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/Hero";
 import TeamCarousel from "@/components/TeamCarousel";
 
