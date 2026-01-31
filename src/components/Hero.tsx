@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import Link from "next/link";

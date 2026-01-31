@@ -1,5 +1,3 @@
-import "../globals.css";
-
 export const metadata = {
   title: "Agrovestors Studio",
   description: "Agrovestors Farm Tech Content Management Studio",
