@@ -1,30 +1,15 @@
-import type { Metadata } from "next";
+"use client";
+
+import { ReactNode } from "react";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-export const metadata: Metadata = {
-  title: {
-    default: "Agrovestors Farm Tech - Sustainable Agriculture Solutions",
-    template: "%s | Agrovestors Farm Tech",
-  },
-  description:
-    "Discover innovative farming solutions with Agrovestors Farm Tech. Explore sustainable agriculture, expert insights, and cutting-edge farm technology.",
-  keywords: [
-    "sustainable agriculture",
-    "farm technology",
-    "Agrovestors",
-    "agriculture solutions",
-    "farming innovation",
-    "agritech",
-  ],
-};
-
 export default function UserLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
