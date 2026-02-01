@@ -1,39 +1,34 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    qualities: [75, 80, 100],
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'www.sanity.io',
-        pathname: '/**',
-      },
-      { 
         protocol: "https",
         hostname: "cdn.sanity.io",
-        pathname: "**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "randomuser.me",
-        pathname: "**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "cdn.shortpixel.ai",
-        pathname: "**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        pathname: "**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "images.pexels.com",
-        pathname: "**",
+        pathname: "/**",
       },
     ],
+    formats: ["image/webp", "image/avif"],
   },
 };
 

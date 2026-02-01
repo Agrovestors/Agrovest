@@ -1,31 +1,27 @@
 "use client";
 
 import { useTheme } from "./ThemeProvider";
-import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
-  const cycleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("system");
-    } else {
-      setTheme("dark");
-    }
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
     <button
-      onClick={cycleTheme}
-      className="p-2 rounded-md transition-all duration-300 hover:bg-green-500/30 hover:text-green-400 hover:shadow-[0_0_8px_rgba(74,222,128,0.5)]"
-      aria-label={`Current theme: ${theme}. Click to change theme.`}
-      title={`Theme: ${theme}`}
+      onClick={toggleTheme}
+      className="p-2 rounded-md transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      title={`Current: ${theme} theme`}
     >
-      {theme === "dark" && <FiMoon className="w-5 h-5" />}
-      {theme === "light" && <FiSun className="w-5 h-5" />}
-      {theme === "system" && <FiMonitor className="w-5 h-5" />}
+      {theme === "dark" ? (
+        <FiSun className="w-5 h-5 text-yellow-500" />
+      ) : (
+        <FiMoon className="w-5 h-5 text-gray-700" />
+      )}
     </button>
   );
 }
