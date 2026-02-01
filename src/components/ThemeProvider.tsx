@@ -25,10 +25,9 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("dark");
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(true);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem(storageKey) as Theme | null;
     if (stored) {
       setThemeState(stored);
@@ -36,8 +35,6 @@ export function ThemeProvider({
   }, [storageKey]);
 
   useEffect(() => {
-    if (!mounted) return;
-
     const root = document.documentElement;
     root.classList.remove("light", "dark");
 
@@ -52,7 +49,7 @@ export function ThemeProvider({
 
     root.classList.add(resolved);
     setResolvedTheme(resolved);
-  }, [theme, mounted]);
+  }, [theme]);
 
   useEffect(() => {
     if (theme !== "system") return;
