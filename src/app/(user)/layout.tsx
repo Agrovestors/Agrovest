@@ -1,10 +1,17 @@
-"use client";
-
 import { ReactNode } from "react";
+import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Agrovestors Farm Tech - Sustainable Agriculture Solutions",
+    template: "%s | Agrovestors Farm Tech",
+  },
+  description: "Discover innovative farming solutions with Agrovestors Farm Tech. Explore sustainable agriculture, expert insights, and cutting-edge farm technology.",
+};
 
 export default function UserLayout({
   children,
@@ -21,7 +28,7 @@ export default function UserLayout({
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider defaultTheme="dark">
-          <Navbar />
+          <NavbarWrapper />
           <main className="pt-16 md:pt-20">
             {children}
           </main>
